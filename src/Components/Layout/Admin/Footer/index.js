@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-class index extends Component {
-    render() {
+
+const Footer = (prop) =>{
         return (
             <div>
-                478
+                footer
             </div>
         );
     }
-}
 
-export default index;
+export default Footer;

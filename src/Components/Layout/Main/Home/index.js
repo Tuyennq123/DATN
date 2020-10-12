@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-
-class index extends Component {
-    render() {
+import Header from '../Header';
+const Home = (prop) => {
         return (
             <div>
-                123
+                <Header />
+dasdasd
             </div>
         );
     }
-}
 
-export default index;
+export default Home;
