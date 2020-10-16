@@ -34,15 +34,17 @@ var script = function(){
 					}
 				});
 
-				m_nav.find("li i").click(function(){
+				nav.find("li i").click(function(){
 					var ul=$(this).nextAll("ul");
 					if(ul.is(":hidden") === true){
-						$(this).addClass('active');
-						ul.slideDown(200);
+						// $(this).addClass('active');
+						// ul.slideDown(200);
+						console.log("true");
 					}
 					else{
-						$(this).removeClass("active");
-						ul.slideUp();
+						// $(this).removeClass("active");
+						// ul.slideUp();
+						console.log('false');
 					}
 				});
 			}
@@ -172,6 +174,50 @@ var script = function(){
 		}
 	}
 
+	var countFromZero = function(){
+		if($('.about-number-count').length>0){
+			$('.about-number-count').each(function () {
+				$(this).prop('Counter',0).animate({
+					Counter: $(this).text()
+				}, {
+					duration: 2000,
+					easing: 'swing',
+					step: function (now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+			});
+		}
+	}
+
+	var brandSlider = function(){
+		if ($(".brands-sliders").length > 0) {
+			$(".brands-sliders").slick({
+				infinite: true,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: false,
+				responsive: [
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					}
+				}
+				]
+			});
+		}
+	}
+
 	return {
 
 		uiInit: function($fun){
@@ -180,7 +226,7 @@ var script = function(){
 				case 'mMenu':
 				mMenu();
 				break;
-				
+
 				case 'homeSlider':
 				homeSlider();
 				break;
@@ -200,8 +246,16 @@ var script = function(){
 				case 'homeGratefulSlider':
 				homeGratefulSlider();
 				break;
+
 				case 'clickFooter':
 				clickFooter();
+				break;
+				case 'countFromZero':
+				countFromZero();
+				break;
+
+				case 'brandSlider':
+				brandSlider();
 				break;
 
 				default:
@@ -212,6 +266,8 @@ var script = function(){
 				mMenu();
 				homeGratefulSlider();
 				clickFooter();
+				countFromZero();
+				brandSlider();
 
 			}
 		}

@@ -17,7 +17,7 @@ import {
         <Router>
               <Route>
                 <Switch>
-                  <Route path="/contact">
+                  <Route path="/ve-chung-toi">
                     <Contact />
                   </Route>
                   <Route path="/" exact>

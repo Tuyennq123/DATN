@@ -1,3 +1,9 @@
+@media all and (min-width: 1200px){
+	html{
+		font-size: 10px;
+	}
+} 
+
 @media (max-width: 1199px) and (min-width: 992px){
 	html{
 		font-size: 9px;
@@ -135,17 +141,71 @@
 						}
 					}
 				}
+				ul li:hover>ul {
+					display: unset;
+				}
 			}
+		}
+		.main-nav > ul ul {
+			pointer-events: all;
+			position: static !important;
 		}
 	}
 	.home-introduce .introduce-image{
 		display: none;
+	}
+	.history-begin .tree-diagram-history .tree-diagram-list .tree-diagram-item{
+		padding: 2rem;
+	}
+	.vision-mission .row .col-md-6{
+		width: 50%;
+	}
+
+	.leadership-team{
+		margin-bottom: 0;
+		padding-bottom: 0;
+		.leadership-team-info{
+			margin-bottom: 2rem;
+		}
+	}
+
+	.news-page{
+		.news-page-posters{
+			font-size: 0;
+			.poster-item{
+				width: 50%;
+				display: inline-block;
+				&:nth-child(odd){
+					padding-right: 1rem;
+				}
+				&:nth-child(even){
+					padding-left: 1rem;
+				}
+			}
+		}
 	}
 }
 
 @media (max-width: 991px) and (min-width: 768px){
 	footer .footer-info-list{
 		margin-bottom: 1.5rem;
+	}
+
+	.news-page{
+		.lastest-news{
+			.lastest-news-item{
+				clear: none;
+				display: inline-block;
+				width: 50%;
+				&:nth-child(odd){
+					padding-right: 1rem;
+				}
+				&:nth-child(even){
+					padding-left: 1rem;
+				}
+			}
+		}
+
 	}
 }
 @media (max-width: 768PX){
@@ -168,6 +228,22 @@
 	}
 	.home-news .small-news .small-news-info .small-news-desc{
 		display: block;
+	}
+	.history-begin .tree-diagram-history .tree-diagram-list .tree-diagram-item {
+		&:nth-child(even) .diagram-body{
+			padding-left: 0;
+		}
+		.diagram-body{
+			width: 100%;
+			padding: 0;
+			&:before, &:after{
+				content: none;
+			}
+		}
+	}
+
+	.about-us-brands .brands-sliders .brands-sliders-item .c-img{
+		padding-top: 50%;
 	}
 }
 @media (max-width: 470px){
@@ -192,6 +268,36 @@
 			}
 			&.active:before{
 				content: "\f106";
+			}
+		}
+	}
+	.vision-mission .row .col-md-6{
+		width: 100%;
+	}
+
+	.vision-mission .flex-sm-row-reverse{
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse;
+		flex-wrap: wrap-reverse;
+	}
+
+	.col-xxs-12{
+		width: 100%;
+	}
+
+	.news-page{
+		.news-page-posters{
+			font-size: 0;
+			.poster-item{
+				width: 100%;
+				&:nth-child(odd){
+					padding-right: 0;
+				}
+				&:nth-child(even){
+					padding-left: 0;
+				}
 			}
 		}
 	}
