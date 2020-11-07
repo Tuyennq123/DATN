@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './header.scss';
 import {
     BrowserRouter as Router,
     Switch,
@@ -73,7 +74,7 @@ const Header = (prop) => {
         <div className="col-lg-3 col-md-3 col10">
           <div className="header-logo">
             <a href="#" title className="smooth">
-              <img src="images/logo/logo.png" className alt />
+              <img src="images/logo/logo.png" className="" alt="" />
             </a>
           </div>
         </div>

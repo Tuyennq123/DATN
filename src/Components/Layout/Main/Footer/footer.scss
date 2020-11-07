@@ -1,0 +1,112 @@
+footer{
+	background-color: #222;
+	padding-top: 3rem;
+	color: #fff;
+	padding-bottom: 5rem;
+	.footer-info-title{
+		font-size: 15px;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		color: #fff;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", sans-serif;
+	}
+	.footer-info-list{
+		.footer-info-item{
+			font-size: 15px;
+			margin-bottom: 0.5rem;
+			a:hover{
+				padding-left: 10px;
+				// color: $color;
+				transition: all 0.25s ease 0s;
+				-moz-transition: all 0.25s ease 0s;
+				-webkit-transition: all 0.25s ease 0s;
+				-o-transition: all 0.25s ease 0s;
+			}
+		}
+	}
+	.footer-social-links{
+		a{
+			text-align: center;
+			width: 3.5rem;
+			height: 3.5rem;
+			color: #2a7f49;
+			border: #dedede 1px solid;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-border-radius: 10px 0;
+			border-radius: 10px 0;
+			-webkit-transition: all ease 500ms;
+			-moz-transition: all ease 500ms;
+			-ms-transition: all ease 500ms;
+			-o-transition: all ease 500ms;
+			transition: all ease 500ms;
+			float: left;
+			margin-right: 10px;
+			background-color: #fff;
+			&:hover{
+				// background-color: $color;
+				color: #fff;
+				// border: $color 1px solid;
+			}
+		}
+	}
+}
+
+.back-to-top{
+	position: fixed;
+	bottom: 20px;
+	cursor: pointer;
+	background-color: #666;
+	border: 4px solid #ddd;
+	color: #ddd;
+	line-height: 42px;
+	text-align: center;
+	width: 48px;
+	height: 48px;
+	z-index: 30;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	opacity: 1;
+	right: 20px;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	&:hover{
+		background-color: #444;
+	}
+}
+
+.breadcrumb-page{
+	background-color: #ebebeb;
+	margin: 0;
+	padding: 10px 0;
+	.breadcrumb{
+		background-color: #ebebeb;
+		margin: 0;
+		padding: 0;
+		border-radius: none;
+		a{
+			color: #4f4f4f;
+			&:hover{
+				// color: $color;
+			}
+		}
+	}
+	.breadcrumb>li+li:before{
+		content: "/";
+	}
+}

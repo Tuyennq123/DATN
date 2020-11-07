@@ -1,0 +1,54 @@
+.home-service{
+	padding: 3rem 0;
+	background: #f8f5e6;
+	.service-list{
+		float: left;
+		width: 100%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		.service-item{
+			float: left;
+			width: calc(100%/4 - 10px);
+			margin-right: 1rem;
+			margin-bottom: 1.5rem;
+			.service-image{
+				text-align: center;
+				float: left;
+				width: 100%;
+				margin-bottom: 15px;
+				img{
+					border: 2px solid #2a7f49;
+					border-radius: 50%;
+					max-width: 165px;
+					height: 165px;
+					-webkit-transition: 0.4s all;
+					-o-transition: 0.4s all;
+					transition: 0.4s all;
+					-o-object-fit: cover;
+					object-fit: cover;
+					-o-object-position: center;
+					object-position: center;
+					&:hover{
+						border-color: rgb(231, 7, 7);
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+		.service-name{
+			float: left;
+			width: 100%;
+			font-size: 16px;
+			font-weight: 700;
+			-webkit-transition: 0.4s all;
+			-o-transition: 0.4s all;
+			transition: 0.4s all;
+			text-align: center;
+		}
+	}
+}

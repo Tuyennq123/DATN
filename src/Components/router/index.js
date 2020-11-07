@@ -30,7 +30,7 @@ import {
                 <Route path="/admin" exact>
                   <Dashboard />
                 </Route>
-                <Route path="/bacsi">
+                <Route path="/admin/bacsi">
                   <Doctor />
                 </Route>
               </Switch>
