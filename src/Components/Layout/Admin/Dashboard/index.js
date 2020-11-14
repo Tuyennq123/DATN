@@ -10,7 +10,7 @@ class Dashboard extends Component {
 		super(props)
 
 		this.state = {
-			      title: '',
+			title: '',
             slug: '',
             content: '',
             status: '',
@@ -19,6 +19,7 @@ class Dashboard extends Component {
             update_at: '',
             loading: false,
             message: 'hello',
+            file: null
 		}
 	}
 
@@ -33,6 +34,10 @@ class Dashboard extends Component {
     const title = this.state.title;
     const slug = this.state.slug;
     const content = this.state.content;
+	const status = this.state.status;
+	const update_at = this.state.update_at;
+	const create_at = this.state.create_at;
+
 
 
     this.setState({
@@ -43,6 +48,9 @@ class Dashboard extends Component {
       title,
       slug,
       content,
+	  status,
+	  create_at,
+	  update_at, 
     }
 
     axios.post('http://localhost:8000/api/post/store', data)
@@ -88,9 +96,10 @@ class Dashboard extends Component {
 							type="text"
 							name="content"
 							value={this.state.content}
-              onChange={this.dataChange.bind(this)}
+              				onChange={this.dataChange.bind(this)}
 						/>
 					</div>
+        
                     <div>
 						<input
 							type="number"
@@ -102,7 +111,7 @@ class Dashboard extends Component {
                    
                     <div>
 						<input
-							type="text"
+							type="date"
 							name="create_at"
 							value={this.state.create_at}
               onChange={this.dataChange.bind(this)}
@@ -110,7 +119,7 @@ class Dashboard extends Component {
 					</div>
                     <div>
 						<input
-							type="text"
+							type="date"
 							name="update_at"
 							value={this.state.update_at}
               onChange={this.dataChange.bind(this)}

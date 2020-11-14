@@ -9,11 +9,10 @@ import {
   import Home from '../Layout/Main/Home/index'
   import Dashboard from '../Layout/Admin/Dashboard/index'
   import Doctor from '../Layout/Admin/Doctor'
+  import Post from '../Layout/Admin/Post'
 
   const Routers = ({ props })  => {
-
         return (
-
         <Router>
               <Route>
                 <Switch>
@@ -32,6 +31,9 @@ import {
                 </Route>
                 <Route path="/admin/bacsi">
                   <Doctor />
+                </Route>
+                <Route path="/admin/post">
+                  <Post />
                 </Route>
               </Switch>
       </Router>

@@ -15,7 +15,7 @@ class Doctor extends Component {
     componentDidMount() {
       axios.post('http://localhost:8000/api/post')
         .then(res => {
-          const posts = res.data;
+          const posts = res.data.data;
           this.setState({ posts });
           console.log(posts);
         })
@@ -33,70 +33,13 @@ class Doctor extends Component {
           })
       
       }
-
-    //   handleChange(event){
-    //     this.setState ({ title:event.target.value });
-    //   }
       handleChange = event => {
         this.setState ({ title:event.target.value });
 
       }
-    
-      handleSubmit = event => {
-        console.log(this.state.title);
-    
-        // axios.post('http://localhost:8000/api/post/store')
-        //   .then(res => {
-        //     console.log(res);
-        //     console.log(res.data);
-        //   })
-      }
-    
-
-
-    // DeletePosts = () =>{
-    //     alert('Xóa');
-    // }
-
-    // EditPost = () =>{
-    //     alert('Sửa');
-    // }
-
-    // close = () => {
-    //     this.setState({ showModal: false });
-    //   }
-    
-    // open = () => {
-    //     this.setState({ showModal: true });
-    //   }
-
     render(){
       return(
     <div className="admin-page">
-         <form onSubmit={this.handleSubmit}>
-                <label>
-                    Person Name:
-                    <input type="text" value = {this.state.title}  onChange={this.handleChange} />
-                </label>
-                <button type="submit" value= "submit">Add</button>
-            </form>
-        {/* <Modal show={this.state.showModal} onHide={this.close}>
-            <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Person Name:
-                    <input type="text" name="title" onChange={this.handleChange} />
-                </label>
-                <button type="submit">Add</button>
-            </form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={this.close}>Close</Button>
-            </Modal.Footer>
-        </Modal> */}
         <div id="wrapper">
             <Navbar />
             <div id="content-wrapper" className="d-flex flex-column">
@@ -124,16 +67,16 @@ class Doctor extends Component {
                                             </tr>
                                         </thead>
                                             <tbody>
-                                                     {this.state.posts.map((item, index) => ( 
-                                                        <tr key={index}> 
+                                                    {this.state.posts.map((item, index) => 
+                                                         <tr key={index}> 
                                                          <td>{item.id}</td> 
                                                          <td>{item.title}</td> 
                                                          <td>{item.body}</td> 
                                                          <td> 
-                                                            <button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Delete</button> 
-                                                         </td> 
+                                                            <button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Delete</button>
+                                                        </td> 
                                                          </tr> 
-													 ))} 
+                                                    )}
                                             </tbody>
                                         </table>
                                     </div>
