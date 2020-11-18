@@ -165,15 +165,10 @@ const Header = (prop) => {
             </ul>
           </li>
           <li>
-          <Link to="/ve-chung-toi">Về chúng tôi</Link>
-
-            {/* <a href="#" title>Trang chủ</a> */}
+          <Link to="/gioithieu">Giới thiệu</Link>
           </li>
           <li>
-            <a href="#" title>Trang chủ</a>
-          </li>
-          <li>
-            <a href="#" title>Trang chủ</a>
+          <Link to="/gioithieu">Liên hê</Link>
           </li>
         </ul>
       </nav>

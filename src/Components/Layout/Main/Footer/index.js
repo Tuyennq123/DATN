@@ -121,7 +121,9 @@ class index extends Component {
     </div>
   </div>
 </footer>
+
             </div>
+            
         );
     }
 }

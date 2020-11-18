@@ -3,21 +3,19 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Topbar from '../Topbar';
 import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
+import { Modal, Button } from 'react-bootstrap';
 // import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
-import './posts.scss';
-class Doctor extends Component {    
+class Service extends Component {    
     state = { 
-	  posts: [],
-	  title: '',
-	  slug: '',
+	  service: [],
+	  name: '',
 	  content: '',
-	  status: '',
-	  is_delete: '',
+    is_delete: '',
+	  short_desc: '',
 	  created_at: '',
 	  id:'',
 	  updated_at: '',
@@ -26,11 +24,11 @@ class Doctor extends Component {
 	  showModal: false,
     }
     componentDidMount() {
-      axios.post('http://localhost:8000/api/post')
+      axios.post('http://localhost:8000/api/service')
       .then(res => {
-		  const posts = res.data.data;
-		  this.setState({ posts });
-		  console.log(posts)
+		  const service = res.data.data;
+		  this.setState({ service });
+		  console.log(service)
 		})
         .catch(error => console.log(error));
   }
@@ -39,26 +37,26 @@ class Doctor extends Component {
   
  
 	deleteRow(id, e){
-        axios.post(`http://localhost:8000/api/post/destroy/` + id)
+        axios.post(`http://localhost:8000/api/service/` + id)
           .then(res => {
             console.log(res);
             console.log(res.data);
-            const posts = this.state.posts.filter(item => item.id !== id);
+            const service = this.state.service.filter(item => item.id !== id);
             console.log(id);
-            this.setState({ posts });
+            this.setState({ service });
           })
           // .then(()=> toastWarning('Xoa thanh cong'))
   
 	  }
 	  
 	  updateRow(id, e){
-        axios.post(`http://localhost:8000/api/post/update/` + id)
+        axios.post(`http://localhost:8000/api/service/update/` + id)
           .then(res => {
             console.log(res);
             console.log(res.data);
-            const posts = this.state.posts.filter(item => item.id !== id);
+            const service = this.state.service.filter(item => item.id !== id);
             console.log(id);
-            this.setState({ posts });
+            this.setState({ service });
           })
       
   }
@@ -71,37 +69,20 @@ class Doctor extends Component {
 	
 	  postData = async (ev) =>{
 		ev.preventDefault()
-		const title = this.state.title;
-		const slug = this.state.slug;
+		const name = this.state.name;
+		const short_desc = this.state.short_desc;
 		const content = this.state.content;
-    const status = this.state.status;
     const updated_at = this.state.updated_at;
 		const created_at = this.state.created_at;
 	
 		const data = {
-		  title,
-		  slug,
+      name,
+      short_desc,
 		  content,
-      status,
       created_at,
       updated_at
 
     }
-    
-    // axios.post('http://localhost:8000/api/post/store', data)
-    // .then(response => {
-    //   console.log(response);
-    //   this.setState({
-    //     loading: false,
-    //     message: response.data 
-    //   })
-    // })
-    // .catch(error => {
-    //   console.log(error);
-    //   this.setState({
-    //     loading: false
-    //   })
-    // })
     
 	
 	  }
@@ -115,39 +96,37 @@ class Doctor extends Component {
     
     // Edit post
   	EditRow = (id) =>{
-		const postUpdated = [...this.state.posts];
+		const postUpdated = [...this.state.service];
 		const item = postUpdated.find(item=>item.id===id);
 		this.setState({
-			posts: [...postUpdated],
-			title: item.title,
-			slug: item.slug,
+			service: [...postUpdated],
+			name: item.name,
+			short_desc: item.short_desc,
 			content: item.content,
-			status: item.status,
 			is_delete: item.is_delete,
-		  create_at: item.create_at, 
-			update_at: item.update_at,
+		  created_at: item.created_at, 
+			updated_at: item.updated_at,
 			id:item.id,
 			loading: false,
-			message: 'hello',
 			showModal: false, 
 		 }) 
 		 this.open()  
 	  }  
     // Save post
 	  saveItem = async () =>{
-	let posts = [...this.state.posts];
-	this.state.posts.map((item,index)=>{
+	let service = [...this.state.service];
+	this.state.service.map((item,index)=>{
 		if (item.id===this.state.id) {
-			posts[index] = [this.state]
+			service[index] = [this.state]
 		}
 	})
-	this.setState({posts})
-	await axios.post(`http://localhost:8000/api/post/update/` + this.state.id, {...this.state});
-	await axios.post('http://localhost:8000/api/post') 
+	this.setState({service})
+	await axios.post(`http://localhost:8000/api/service/update/` + this.state.id, {...this.state});
+	await axios.post('http://localhost:8000/api/service') 
         .then(res => {
-		  const posts = res.data.data;
-		  this.setState({ posts });
-		  console.log(posts)
+		  const service = res.data.data;
+		  this.setState({ service });
+		  console.log(service)
 		})
         .catch(error => console.log(error));
 
@@ -165,44 +144,33 @@ class Doctor extends Component {
             </Modal.Header>
 				<Modal.Body>
 				<form onSubmit={this.postData.bind(this)}>
-          
 						<div className="form-group ">
               <label>Tiêu đề</label>
                 <input
                   className="form-control" 
-                  type="text"
-                  name="title"
-                  value={this.state.title}
+                  type="name"
+                  name="name"
+                  value={this.state.name}
                   onChange={this.dataChange.bind(this)}
                 />
               </div>
             <div className="form-group ">
-              <label>Slug</label>
+              <label>short_desc</label>
 							<input
                 className="form-control" 
 								type="text"
-								name="slug"
-								value={this.state.slug}
+								name="short_desc"
+								value={this.state.short_desc}
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
             <div className="form-group ">
-              <label>Nội dung chính</label>
+              <label>content</label>
 							<input
                 className="form-control" 
 								type="text"
 								name="content"
 								value={this.state.content}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-            <div className="form-group ">
-              <label>Trạng thái</label>
-							<input
-                className="form-control" 
-								type="number"
-								name="status"
-								value={this.state.status}
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
@@ -260,14 +228,15 @@ class Doctor extends Component {
                                         <thead>
                                             <tr>
                                             {/* <th scope="col">STT</th> */}
-                                            <th scope="col">Tiêu đề</th>
-                                            <th scope="col">Slug</th>
-                                            <th scope="col">Nội dung</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Short_desc</th>
+                                            <th scope="col">Content</th>
                                             <th scope="col">Create_at</th>
                                             <th scope="col">Update_at</th>
                                             <th scope="col">
-                                                <button type="button" class="btn btn-success">
-                                                      <Link to="/admin/post/addpost">
+                                            <button type="button" class="btn btn-success">
+                                                      <Link to="/admin/service/addservice">
                                                         Thêm
                                                       </Link>
                                                 </button>
@@ -275,11 +244,12 @@ class Doctor extends Component {
                                             </tr>
                                         </thead>
                                             <tbody>
-                                                    {this.state.posts.map((item, index) => 
+                                                    {this.state.service.map((item, index) => 
                                                          <tr key={index}> 
                                                          {/* <td>{item.id}</td>  */}
-                                                         <td>{item.title}</td>
-                                                         <td>{item.slug}</td> 
+                                                         <td>{item.name}</td>
+                                                         <td>{item.price}</td> 
+                                                         <td>{item.short_desc}</td> 
                                                          <td>{item.content}</td> 
                                                          <td>{item.created_at}</td>
                                                          <td>{item.updated_at}</td>
@@ -306,4 +276,4 @@ class Doctor extends Component {
   }
   
 
-export default Doctor;
+export default Service;
