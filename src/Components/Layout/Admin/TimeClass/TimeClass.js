@@ -9,13 +9,13 @@ import {
 } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 // import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
-class Service extends Component {    
+class TimeClass extends Component {    
     state = { 
-	  service: [],
+      timecalender: [],
 	  name: '',
-	  content: '',
-    is_delete: '',
-	  short_desc: '',
+	  message: '',
+      time_start: '',
+	  time_end: '',
 	  created_at: '',
 	  id:'',
 	  updated_at: '',
@@ -24,36 +24,36 @@ class Service extends Component {
 	  showModal: false,
     }
     componentDidMount() {
-      axios.post('http://localhost:8000/api/service')
+      axios.post('http://localhost:8000/api/timecalender')
       .then(res => {
-		  const service = res.data.data;
-		  this.setState({ service });
-		  console.log(service)
+		  const timecalender = res.data.data;
+		  this.setState({ timecalender });
+		  console.log(timecalender)
 		})
         .catch(error => console.log(error));
   }
   
 	deleteRow(id, e){
-        axios.post(`http://localhost:8000/api/service/destroy/` + id)
+        axios.post(`http://localhost:8000/api/timecalender/destroy/` + id)
           .then(res => {
             console.log(res);
             console.log(res.data);
-            const service = this.state.service.filter(item => item.id !== id);
+            const timecalender = this.state.timecalender.filter(item => item.id !== id);
             console.log(id);
-            this.setState({ service });
+            this.setState({ timecalender });
           })
           // .then(()=> toastWarning('Xoa thanh cong'))
   
 	  }
 	  
 	  updateRow(id, e){
-        axios.post(`http://localhost:8000/api/service/update/` + id)
+        axios.post(`http://localhost:8000/api/timecalender/update/` + id)
           .then(res => {
             console.log(res);
             console.log(res.data);
-            const service = this.state.service.filter(item => item.id !== id);
+            const timecalender = this.state.timecalender.filter(item => item.id !== id);
             console.log(id);
-            this.setState({ service });
+            this.setState({ timecalender });
           })
       
   }
@@ -67,17 +67,18 @@ class Service extends Component {
 	  postData = async (ev) =>{
 		ev.preventDefault()
 		const name = this.state.name;
-		const short_desc = this.state.short_desc;
-		const content = this.state.content;
-    const updated_at = this.state.updated_at;
+        const time_start = this.state.time_start;
+		const time_end  = this.state.time_end;
+		const message = this.state.message;
+        const updated_at = this.state.updated_at;
 		const created_at = this.state.created_at;
 	
 		const data = {
-      name,
-      short_desc,
-		  content,
-      created_at,
-      updated_at
+        name,
+        time_start,
+	    message,
+        created_at,
+        updated_at
     }
     
 	
@@ -92,15 +93,15 @@ class Service extends Component {
     
     // Edit post
   	EditRow = (id) =>{
-		const postUpdated = [...this.state.service];
+		const postUpdated = [...this.state.timecalender];
 		const item = postUpdated.find(item=>item.id===id);
 		this.setState({
-			service: [...postUpdated],
+			timecalender: [...postUpdated],
 			name: item.name,
-			short_desc: item.short_desc,
-			content: item.content,
-			is_delete: item.is_delete,
-		  created_at: item.created_at, 
+			time_start: item.time_start,
+            time_end: item.time_end,
+            message: item.message,
+		    created_at: item.created_at, 
 			updated_at: item.updated_at,
 			id:item.id,
 			loading: false,
@@ -110,19 +111,19 @@ class Service extends Component {
 	  }  
     // Save post
 	  saveItem = async () =>{
-	let service = [...this.state.service];
-	this.state.service.map((item,index)=>{
+	let timecalender = [...this.state.timecalender];
+	this.state.timecalender.map((item,index)=>{
 		if (item.id===this.state.id) {
-			service[index] = [this.state]
+			timecalender[index] = [this.state]
 		}
 	})
-	this.setState({service})
-	await axios.post(`http://localhost:8000/api/service/update/` + this.state.id, {...this.state});
-	await axios.post('http://localhost:8000/api/service') 
+	this.setState({timecalender})
+	await axios.post(`http://localhost:8000/api/timecalender/update/` + this.state.id, {...this.state});
+	await axios.post('http://localhost:8000/api/timecalender') 
         .then(res => {
-		  const service = res.data.data;
-		  this.setState({ service });
-		  console.log(service)
+		  const timecalender = res.data.data;
+		  this.setState({ timecalender });
+		  console.log(timecalender)
 		})
         .catch(error => console.log(error));
 
@@ -136,12 +137,12 @@ class Service extends Component {
 		<div> 
 		  <Modal show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
-                <Modal.Title>Thêm bài viết</Modal.Title>
+                <Modal.Title>Sửa ca khám</Modal.Title>
             </Modal.Header>
 				<Modal.Body>
 				<form onSubmit={this.postData.bind(this)}>
 						<div className="form-group ">
-              <label>Tiêu đề</label>
+              <label>Ca khám</label>
                 <input
                   className="form-control" 
                   type="name"
@@ -151,22 +152,22 @@ class Service extends Component {
                 />
               </div>
             <div className="form-group ">
-              <label>short_desc</label>
+              <label>Giờ bắt đầu</label>
 							<input
                 className="form-control" 
 								type="text"
-								name="short_desc"
-								value={this.state.short_desc}
+								name="time_start"
+								value={this.state.time_start}
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
             <div className="form-group ">
-              <label>content</label>
+              <label>Giờ kết thúc</label>
 							<input
                 className="form-control" 
 								type="text"
-								name="content"
-								value={this.state.content}
+								name="time_end"
+								value={this.state.time_end}
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
@@ -191,11 +192,12 @@ class Service extends Component {
 							/>
 						</div>
 						<div className="form-group ">
+              <label>Lời nhắn</label>
 							<input
                className="form-control" 
-								type="number"
-								name="is_delete"
-								value={this.state.is_delete}
+								type="text"
+								name="message"
+								value={this.state.message}
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
@@ -216,7 +218,7 @@ class Service extends Component {
                         <div>
                             <div className="card shadow mb-4">
                                 <div className="card-header py-3">
-                                    <h6 className="m-0 font-weight-bold text-primary">Danh sách bài viết</h6>
+                                    <h6 className="m-0 font-weight-bold text-primary">Danh sách ca khám</h6>
                                 </div>
                                 <div className="card-body">
                                     <div className="table-responsive">
@@ -224,15 +226,15 @@ class Service extends Component {
                                         <thead>
                                             <tr>
                                             {/* <th scope="col">STT</th> */}
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Short_desc</th>
-                                            <th scope="col">Content</th>
-                                            <th scope="col">Create_at</th>
-                                            <th scope="col">Update_at</th>
+                                            <th scope="col">Ca khám</th>
+                                            <th scope="col">Thời gian bắt đầu</th>
+                                            <th scope="col">Thời gian kết thúc</th>
+                                            <th scope="col">Lời nhắn</th>
+                                            <th scope="col">Ngày tạo</th>
+                                            <th scope="col">Ngày sửa</th>
                                             <th scope="col">
                                             <button type="button" class="btn btn-success">
-                                                      <Link to="/admin/service/addservice">
+                                                      <Link to="/admin/timeclass/addtime">
                                                         Thêm
                                                       </Link>
                                                 </button>
@@ -240,15 +242,15 @@ class Service extends Component {
                                             </tr>
                                         </thead>
                                             <tbody>
-                                                    {this.state.service.map((item, index) => 
+                                                    {this.state.timecalender.map((item, index) => 
                                                          <tr key={index}> 
                                                          {/* <td>{item.id}</td>  */}
                                                          <td>{item.name}</td>
-                                                         <td>{item.price}</td> 
-                                                         <td>{item.short_desc}</td> 
-                                                         <td>{item.content}</td> 
+                                                         <td>{item.time_start}</td>
+                                                         <td>{item.time_end}</td>
+                                                         <td>{item.message}</td>
                                                          <td>{item.created_at}</td>
-                                                         <td>{item.updated_at}</td>
+                                                         <td>{item.updated_end}</td>
                                                          <td> 
                                                          	<button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Delete</button>
 															                            <button className="btn btn-warning" onClick={(e) => this.EditRow(item.id)}>Edit</button> 
@@ -272,4 +274,4 @@ class Service extends Component {
   }
   
 
-export default Service;
+export default TimeClass;

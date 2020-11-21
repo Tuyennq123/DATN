@@ -13,6 +13,14 @@ import {
   import EditPost from '../Layout/Admin/Post/EditPost/EditPost'
   import Service from '../Layout/Admin/Service'
   import AddService from '../Layout/Admin/Service/AddService/Addservice'
+  import TimeClass from '../Layout/Admin/TimeClass/TimeClass'
+  import Addtime from '../Layout/Admin/TimeClass/Addtime/Addtime'
+  import Users from '../Layout/Admin/Users/Users'
+  import Customer from '../Layout/Admin/Customer/Customer'
+  import AddCustomer from '../Layout/Admin/Customer/AddCustomer/AddCustomer'
+
+
+
 
 
 
@@ -30,12 +38,11 @@ import {
                   </Route>
                 </Switch>
               </Route>
-
               <Switch>
                 <Route path="/admin" exact>
                   <Dashboard />
                 </Route>
-                <Route path="/admin/bacsi">
+                <Route path="/admin/doctor">
                   <Doctor />
                 </Route>
                 <Route path="/admin/post" exact>
@@ -52,6 +59,21 @@ import {
                 </Route>
                 <Route path="/admin/service/addservice" exact>
                   <AddService />
+                </Route>
+                <Route path="/admin/timeclass" exact>
+                  <TimeClass />
+                </Route>
+                <Route path="/admin/timeclass/addtime">
+                  <Addtime />
+                </Route>
+                <Route path="/admin/users" exact>
+                  <Users />
+                </Route>
+                <Route path="/admin/customer" exact>
+                  <Customer />
+                </Route>
+                <Route path="/admin/customer/addcustomer">
+                  <AddCustomer />
                 </Route>
               </Switch>
       </Router>

@@ -14,7 +14,7 @@ const Navbar = props => {
     <div className="sidebar-brand-icon rotate-n-15">
       <i className="fas fa-laugh-wink" />
     </div>
-    <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div className="sidebar-brand-text mx-3">Quản trị <sup></sup></div>
   </a>
   {/* Divider */}
 
@@ -22,28 +22,50 @@ const Navbar = props => {
               <li className="nav-item">
                   <Link className="nav-link" to="/admin">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Dashboard</span></Link>
+                      <span>Dashboard</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/post">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Post</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/service">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Service</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/timeclass">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>TimeClass</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/users">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Users</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/customer">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Customer</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/doctor">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Doctor</span>
+                  </Link>
               </li>
   {/* Divider */}
-  <hr className="sidebar-divider" />
-  {/* Heading */}
-  <div className="sidebar-heading">
-    Interface
-  </div>
+ 
   {/* Nav Item - Pages Collapse Menu */}
-  <li className="nav-item">
-    <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-      <i className="fas fa-fw fa-cog" />
-      <span>Components</span>
-    </a>
-    <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-      <div className="bg-white py-2 collapse-inner rounded">
-        <h6 className="collapse-header">Custom Components:</h6>
-        <a className="collapse-item" href="buttons.html">Buttons</a>
-        <a className="collapse-item" href="cards.html">Cards</a>
-      </div>
-    </div>
-  </li>
+  
+   
   {/* Nav Item - Utilities Collapse Menu */}
   <li className="nav-item">
     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">

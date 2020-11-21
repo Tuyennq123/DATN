@@ -141,14 +141,14 @@ class Addpost extends Component {
                                                 />
                                             </div>
                                             <div className="form-group ">
-              <input
- className="form-control" 
-                  type="number"
-                  name="is_delete"
-                  value={this.state.is_delete}
-                  onChange={this.dataChange.bind(this)}
-              />
-          </div>
+                                              <input
+                                              className="form-control" 
+                                              type="number"
+                                              name="is_delete"
+                                              value={this.state.is_delete}
+                                              onChange={this.dataChange.bind(this)}
+                                                />
+                                           </div>
                                             <button type="submit" onClick={this.saveItem}>Submit</button>
                                             </form>
                             </div>

@@ -58,7 +58,6 @@ class Addservice extends Component {
         loading: false
       })
     })
-	
 	  }
 
     render(){
@@ -77,78 +76,77 @@ class Addservice extends Component {
                                 </div>
                                 <div className="card-body">
                                 <form onSubmit={this.postData.bind(this)}>
-						<div className="form-group ">
-              <label>Tiêu đề</label>
-                <input
-                  className="form-control" 
-                  type="text"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.dataChange.bind(this)}
-                />
-              </div>
-              <div className="form-group ">
-              <label>Tiêu đề</label>
-                <input
-                  className="form-control" 
-                  type="number"
-                  name="price"
-                  value={this.state.price}
-                  onChange={this.dataChange.bind(this)}
-                />
-              </div>
-              
-            <div className="form-group ">
-              <label>short_desc</label>
-							<input
-                className="form-control" 
-								type="text"
-								name="short_desc"
-								value={this.state.short_desc}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-            <div className="form-group ">
-              <label>content</label>
-							<input
-                className="form-control" 
-								type="text"
-								name="content"
-								value={this.state.content}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<div className="form-group ">
-              <label>Ngày tạo</label>
-							<input
-                className="form-control" 
-								type="date"
-								name="create_at"
-								value={this.state.create_at}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<div className="form-group ">
-              <label>Ngày cập nhập</label>
-              <input 
-                className="form-control" 
-								type="date"
-								name="update_at"
-								value={this.state.update_at}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<div className="form-group ">
-							<input
-                                className="form-control" 
-								type="number"
-								name="is_delete"
-								value={this.state.is_delete}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<button type="submit" onClick={this.saveItem}>Submit</button>
-					</form>
+                                    <div className="form-group ">
+                                        <label>Tiêu đề</label>
+                                        <input
+                                            className="form-control" 
+                                            type="text"
+                                            name="name"
+                                            value={this.state.name}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group ">
+                                    <label>Tiêu đề</label>
+                                        <input
+                                            className="form-control" 
+                                            type="number"
+                                            name="price"
+                                            value={this.state.price}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group ">
+                                        <label>short_desc</label>
+                                            <input
+                                                className="form-control" 
+                                                type="text"
+                                                name="short_desc"
+                                                value={this.state.short_desc}
+                                                onChange={this.dataChange.bind(this)}
+                                            />
+                                    </div>
+                                    <div className="form-group ">
+                                        <label>content</label>
+                                            <input
+                                                className="form-control" 
+                                                type="text"
+                                                name="content"
+                                                value={this.state.content}
+                                                onChange={this.dataChange.bind(this)}
+                                            />
+                                    </div>
+						            <div className="form-group ">
+                                        <label>Ngày tạo</label>
+                                            <input
+                                                className="form-control" 
+                                                type="date"
+                                                name="create_at"
+                                                value={this.state.create_at}
+                                                onChange={this.dataChange.bind(this)}
+                                                />
+						            </div>
+                                    <div className="form-group ">
+                                        <label>Ngày cập nhập</label>
+                                            <input 
+                                                className="form-control" 
+                                                type="date"
+                                                name="update_at"
+                                                value={this.state.update_at}
+                                                onChange={this.dataChange.bind(this)}
+                                            />
+                                    </div>
+                                    <div className="form-group ">
+                                        <input
+                                            className="form-control" 
+                                            type="number"
+                                            name="is_delete"
+                                            value={this.state.is_delete}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+						            <button type="submit" onClick={this.saveItem}>Submit</button>
+					                </form>
                             </div>
                         </div>
                     </div>

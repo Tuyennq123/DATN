@@ -13,7 +13,7 @@ class Doctor extends Component {
       title: '',
     }
     componentDidMount() {
-      axios.post('http://localhost:8000/api/post')
+      axios.post('http://localhost:8000/api/doctor')
         .then(res => {
           const posts = res.data.data;
           this.setState({ posts });
@@ -49,16 +49,16 @@ class Doctor extends Component {
                         <div>
                             <div className="card shadow mb-4">
                                 <div className="card-header py-3">
-                                    <h6 className="m-0 font-weight-bold text-primary">Danh sách bài viết</h6>
+                                    <h6 className="m-0 font-weight-bold text-primary">Danh sách bác sĩ</h6>
                                 </div>
                                 <div className="card-body">
                                     <div className="table-responsive">
                                         <table className="table table-bordered" id="dataTable" width="100%" cellSpacing={0}>
                                         <thead>
                                             <tr>
-                                            <th scope="col">STT</th>
-                                            <th scope="col">Tiêu đề</th>
-                                            <th scope="col">Nội dung</th>
+                                            <th scope="col">Họ và tên</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Giới thiệu</th>
                                             <th scope="col">
                                                 <button onClick={this.open} type="button" class="btn btn-success">
                                                     <i class="fas fa-plus-square">Thêm</i>
@@ -69,9 +69,9 @@ class Doctor extends Component {
                                             <tbody>
                                                     {this.state.posts.map((item, index) => 
                                                          <tr key={index}> 
-                                                         <td>{item.id}</td> 
-                                                         <td>{item.title}</td> 
-                                                         <td>{item.body}</td> 
+                                                         <td>{item.name}</td> 
+                                                         <td>{item.email}</td> 
+                                                         <td>{item.info}</td> 
                                                          <td> 
                                                             <button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Delete</button>
                                                         </td> 
