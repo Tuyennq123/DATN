@@ -6,6 +6,7 @@ import {
   } from "react-router-dom";
   import Contact from '../Layout/Main/Contact'
   import Home from '../Layout/Main/Home/index'
+  import News from '../Layout/Main/News/News'
   import Dashboard from '../Layout/Admin/Dashboard/index'
   import Doctor from '../Layout/Admin/Doctor'
   import Post from '../Layout/Admin/Post'
@@ -35,6 +36,9 @@ import {
                   </Route>
                   <Route path="/" exact>
                     <Home />
+                  </Route>
+                  <Route path="/tintuc">
+                    <News />
                   </Route>
                 </Switch>
               </Route>
