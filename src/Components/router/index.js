@@ -5,6 +5,7 @@ import {
     Route,
   } from "react-router-dom";
   import Contact from '../Layout/Main/Contact'
+  import Serviceinfo from '../Layout/Main/Serviceinfo/Serviceinfo'
   import Home from '../Layout/Main/Home/index'
   import News from '../Layout/Main/News/News'
   import Dashboard from '../Layout/Admin/Dashboard/index'
@@ -19,6 +20,7 @@ import {
   import Users from '../Layout/Admin/Users/Users'
   import Customer from '../Layout/Admin/Customer/Customer'
   import AddCustomer from '../Layout/Admin/Customer/AddCustomer/AddCustomer'
+  import Calendars from '../Layout/Main/Calendars/Calendars';
 
 
 
@@ -31,14 +33,20 @@ import {
         <Router>
               <Route>
                 <Switch>
-                  <Route path="/gioithieu">
-                    <Contact />
-                  </Route>
                   <Route path="/" exact>
                     <Home />
                   </Route>
+                  <Route path="/gioithieu">
+                    <Contact />
+                  </Route>
                   <Route path="/tintuc">
                     <News />
+                  </Route>
+                  <Route path="/dichvu">
+                    <Serviceinfo />
+                  </Route>
+                  <Route path="/datlich">
+                    <Calendars />
                   </Route>
                 </Switch>
               </Route>

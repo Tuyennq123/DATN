@@ -143,226 +143,17 @@ const Home = (prop) => {
           </div>
         </div>
       </div>
+
       <div className="home-doctor home-introduce">
         <div className="container">
           <h3 className="introduce-title">
             <a href="#" className="smooth" title>
-              <span>Đội ngũ bác sỹ</span>
+              <span>Bác sĩ phòng khám</span>
             </a>
           </h3>
-          <div className="home-doctor-slider row row10 slick-initialized slick-slider"><i className="fa fa-angle-left slick-arrow-left slick-arrow" style={{display: 'block'}} />
-            <div aria-live="polite" className="slick-list draggable"><div className="slick-track" role="listbox" style={{opacity: 1, width: '3770px', left: '-1160px'}}><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={-4} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={-3} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={-2} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={-1} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-current slick-active" data-slick-index={0} aria-hidden="false" tabIndex={-1} role="option" aria-describedby="slick-slide10" style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={0}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={0}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-active" data-slick-index={1} aria-hidden="false" tabIndex={-1} role="option" aria-describedby="slick-slide11" style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={0}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={0}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-active" data-slick-index={2} aria-hidden="false" tabIndex={-1} role="option" aria-describedby="slick-slide12" style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={0}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={0}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-active" data-slick-index={3} aria-hidden="false" tabIndex={-1} role="option" aria-describedby="slick-slide13" style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={0}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={0}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide" data-slick-index={4} aria-hidden="true" tabIndex={-1} role="option" aria-describedby="slick-slide14" style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={5} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={6} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={7} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div><div className="col-lg-3 col10 slick-slide slick-cloned" data-slick-index={8} aria-hidden="true" tabIndex={-1} style={{width: '290px'}}>
-                  <div className="doctor-box">
-                    <div className="doctor-avatar hv-scale">
-                      <a href="#" className="smooth c-img" title tabIndex={-1}>
-                        <img src="images/doctors/1.jpg" className alt="" />
-                      </a>
-                    </div>
-                    <div className="doctor-info">
-                      <h4 className="doctor-name"><a href="#" className="smooth" title tabIndex={-1}>TS.BS Bùi Vinh Quang</a></h4>
-                      <ul className="doctor-position">
-                        <li className="position-item"><span>Giám đốc</span></li>
-                        <li className="education-item"><span>Tiến sĩ - Bác sĩ</span></li>
-                        <li className="medical-item"><span>Khoa Ngoại Đầu cổ</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div></div></div>
-            <i className="fa fa-angle-right slick-arrow-right slick-arrow" style={{display: 'block'}} /></div>
         </div>
       </div>
+
       <div className="home-news">
         <div className="container">
           <div className="row row10">
@@ -494,6 +285,68 @@ const Home = (prop) => {
                   <button style={{textAlign: 'center'}}><h2>Đăng ký</h2></button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="home-grateful">
+        <div className="container">
+          <h3 className="introduce-title">
+            <a href="#" className="smooth" title>
+              <span>Góc tri ân</span>
+            </a>
+          </h3>
+          <div className="row row10 home-grateful-slider">
+            <div className="col-lg-4 col-md-4 col10">
+              <div className="customer-info-box">
+                <div className="customer-avatar hv-light">
+                  <img src="images/customers/1.png" alt="" />
+                </div>
+                <div className="customer-info">
+                  <h5 className="customer-name">Allison Argent</h5>
+                  <p>Diễn viên điện ảnh</p>
+                  <p>24 tuổi</p>
+                </div>
+              </div>
+              <div className="grateful-detail-box">
+                <div className="grateful-detail text4line">
+                  hospital Health có nhiều chính sách khám chữa bệnh rất hay nên tôi rất thích. Nhà tôi mới đăng ký Thẻ khám bệnh gia đình xong, thế là cả nhà tôi sẽ đi khám miễn phí cả năm.
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4 col10">
+              <div className="customer-info-box">
+                <div className="customer-avatar hv-light">
+                  <img src="images/customers/1.png" alt="" />
+                </div>
+                <div className="customer-info">
+                  <h5 className="customer-name">Allison Argent</h5>
+                  <p>Diễn viên điện ảnh</p>
+                  <p>24 tuổi</p>
+                </div>
+              </div>
+              <div className="grateful-detail-box">
+                <div className="grateful-detail text4line">
+                  hospital Health có nhiều chính sách khám chữa bệnh rất hay nên tôi rất thích. Nhà tôi mới đăng ký Thẻ khám bệnh gia đình xong, thế là cả nhà tôi sẽ đi khám miễn phí cả năm.
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4 col10">
+              <div className="customer-info-box">
+                <div className="customer-avatar hv-light">
+                  <img src="images/customers/1.png" alt="" />
+                </div>
+                <div className="customer-info">
+                  <h5 className="customer-name">Allison Argent</h5>
+                  <p>Diễn viên điện ảnh</p>
+                  <p>24 tuổi</p>
+                </div>
+              </div>
+              <div className="grateful-detail-box">
+                <div className="grateful-detail text4line">
+                  hospital Health có nhiều chính sách khám chữa bệnh rất hay nên tôi rất thích. Nhà tôi mới đăng ký Thẻ khám bệnh gia đình xong, thế là cả nhà tôi sẽ đi khám miễn phí cả năm.
+                </div>
+              </div>
             </div>
           </div>
         </div>

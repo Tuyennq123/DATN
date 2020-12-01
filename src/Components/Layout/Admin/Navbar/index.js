@@ -6,6 +6,7 @@ import {
 import '../css/sb-admin-2.min.scss';
 import '../Doctor';
 const Navbar = props => {
+  var $baseUrl = 'http://localhost:8000/public/';
         return (
             <div className="menu">
  <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -14,7 +15,7 @@ const Navbar = props => {
     <div className="sidebar-brand-icon rotate-n-15">
       <i className="fas fa-laugh-wink" />
     </div>
-    <div className="sidebar-brand-text mx-3">Quản trị <sup></sup></div>
+    <div className="sidebar-brand-text mx-3">Quản trịsssssss <sup></sup></div>
   </a>
   {/* Divider */}
 

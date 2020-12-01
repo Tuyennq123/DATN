@@ -1,3 +1,66 @@
+// .home-introduce{
+// 	padding: 3rem 0;
+// 	background: #f9f9f9;
+// 	.introduce-desc{
+// 		font-size: 15px;
+// 		letter-spacing: 0.25px;
+// 		p{
+// 			line-height: 24px;
+// 		}
+// 	}
+// 	.introduce-image{
+// 		img{
+// 			margin: 0 auto;
+// 			border: #2a7f49 3px double;
+// 			border-radius: 20px 20px 0;
+// 			width: 100%;
+// 			height: 100%;
+// 			-o-object-fit: cover;
+// 			object-fit: cover;
+// 			-o-object-position: center;
+// 			object-position: center;
+// 		}
+// 	}
+// }
+// .introduce-title{
+// 	position: relative;
+// 	margin-bottom: 2rem;
+// 	text-align: center;
+// 	&:before{
+// 		content: "";
+// 		display: block;
+// 		border-top: #2a7f49 3px double;
+// 		position: absolute;
+// 		z-index: 0;
+// 		width: 50%;
+// 		margin: auto;
+// 		left: 25%;
+// 		top: 50%;
+// 	}
+// 	a{
+// 		color: #fff;
+// 		background: #2a7f49;
+// 		padding: 5px 2rem;
+// 		-webkit-transform: skew(-36deg);
+// 		-ms-transform: skew(-36deg);
+// 		transform: skew(-36deg);
+// 		display: inline-block;
+// 		font-weight: 700;
+// 		&:hover{
+// 			// background-color: $color;
+// 		}
+// 	}
+// 	span{
+// 		-webkit-transform: skew(36deg);
+// 		-ms-transform: skew(36deg);
+// 		transform: skew(36deg);
+// 		display: inline-block;
+// 		font-size: 2.3rem;
+// 		line-height: normal;
+// 		letter-spacing: 0.25px;
+// 	}
+// }
+
 // .home-service{
 // 	padding: 3rem 0;
 // 	background: #f8f5e6;
@@ -52,4 +115,230 @@
 // 		}
 // 	}
 // }
+// .home-doctor{
+// 	.doctor-box{
+// 		.doctor-avatar{
 
+// 		}
+// 		.doctor-info{
+// 			padding: 1rem;
+// 			background-color: #2a7f49;
+// 			color: #fff;
+// 			.doctor-name{
+// 				font-size: 16px;
+// 				font-weight: 700;
+// 				margin-bottom: 7px;
+// 			}
+// 			.doctor-position{
+// 				font-size: 15px;
+// 				li{
+// 					position: relative;
+// 					padding-left: 2rem;
+// 					&:before{
+// 						font-size: 12px;
+// 						font-family: "fontawesome";
+// 						position: absolute;
+// 						left: 0;
+// 					}
+// 					&.position-item:before{
+// 						content: "\f234";
+// 					}
+// 					&.education-item:before{
+// 						content: "\f19d";
+// 					}
+// 					&.medical-item:before{
+// 						content: "\f055";
+// 					}
+// 				}
+// 			}
+// 			.make-appointment-box{
+// 				text-align: center;
+// 				margin-top: 1rem;
+// 				.make-appointment-link{
+// 					background-color: #6779c4;
+// 					padding: 9px 39px;
+// 					border-radius: 4px;
+// 					display: inline-block;
+// 					&:hover{
+// 						// background-color: $color;
+// 						color: #fff;
+// 					}
+// 					.make-appointment-text{
+// 						border-left: 2px solid #fff;
+// 						display: inline-block;
+// 						position: relative;
+// 						padding-left: 5px;
+// 						margin-left: 5px;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// .home-news{
+// 	padding: 3rem 0;
+// 	.hot-news-box{
+// 		text-align: center;
+// 	}
+// 	.hot-news-image{
+// 		position: relative;
+// 		display: inline-block;
+// 		&:before{
+// 			content: "";
+// 			position: absolute;
+// 			top: 0;
+// 			left: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			-webkit-transition: 0.6s;
+// 			-o-transition: 0.6s;
+// 			transition: 0.6s;
+// 		}
+// 		&:after{
+// 			content: "";
+// 			position: absolute;
+// 			top: 0;
+// 			left: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			-webkit-transition: 0.6s;
+// 			-o-transition: 0.6s;
+// 			transition: 0.6s;
+// 		}
+// 		&:hover:before{
+// 			top: 50%;
+// 			bottom: 50%;
+// 			-webkit-transition: 0.6s;
+// 			-o-transition: 0.6s;
+// 			transition: 0.6s;
+// 			background-color: rgba(255, 255, 255, 0.5);
+// 		}
+// 		&:hover:after{
+// 			left: 50%;
+// 			right: 50%;
+// 			-webkit-transition: 0.6s;
+// 			-o-transition: 0.6s;
+// 			transition: 0.6s;
+// 			background-color: rgba(255, 255, 255, 0.5);
+// 		}
+// 		img{
+// 			max-height: 375px;
+// 			object-fit: contain;
+// 		}
+// 	}
+// 	.hot-news-detail{
+// 		margin-top: 1.5rem;
+// 		.hot-news-title{
+// 			font-weight: 700;
+// 			font-size: 16px;
+// 			margin-bottom: 1rem;
+// 		}
+// 	}
+// 	.small-news{
+// 		.small-new-image{
+// 			height: 100px;
+// 			max-width: 100px;
+// 			text-align: center;
+// 			img{
+// 				height: 100%;
+// 				object-fit: cover;
+// 			}
+// 		}
+// 		.small-news-info{
+// 			width: calc(100% - 120px);
+// 			vertical-align: top;
+// 			margin-left: 1.5rem;
+// 			.small-news-title{
+// 				font-size: 15px;
+// 				font-weight: 700;
+// 				margin-bottom: 1rem;
+// 			}
+// 			.small-news-desc{
+// 				display: none;
+// 			}
+// 		}
+// 		.small-news-item{
+// 			display: -webkit-box;
+// 			display: -webkit-flex;
+// 			display: -ms-flexbox;
+// 			display: flex;
+// 			-webkit-flex-wrap: wrap;
+// 			-ms-flex-wrap: wrap;
+// 			flex-wrap: wrap;
+// 			&:not(:last-child){
+// 				margin-bottom: 2rem;
+// 			}
+// 		}
+// 	}
+// 	.news-video{
+// 		iframe{
+// 			width: 100%;
+// 			min-height: 360px;
+// 		}
+// 	}
+// }
+
+// .home-grateful{
+// 	background: #ebebeb;
+// 	padding: 3rem 0;
+// 	.customer-info-box{
+// 		display: -webkit-box;
+// 		display: -webkit-flex;
+// 		display: -ms-flexbox;
+// 		display: flex;
+// 		-webkit-flex-wrap: wrap;
+// 		-ms-flex-wrap: wrap;
+// 		flex-wrap: wrap;
+// 		align-items: center;
+// 		padding: 2rem;
+// 		background: #8CCECA;
+// 		position: relative;
+// 		&:before{
+// 			content: '';
+// 			width: 0;
+// 			height: 0;
+// 			border-style: solid;
+// 			border-width: 0 15px 15px 0px;
+// 			border-color: transparent transparent #ebebeb transparent;
+// 			position: absolute;
+// 			bottom: 0;
+// 			left: 25%;
+// 		}
+// 		.customer-avatar{
+// 			height: 108px;
+// 			overflow: hidden;
+// 			max-width: 144px;
+// 			border: 3px solid #fff;
+// 			border-radius: 20px 20px 0;
+// 		}
+// 		.customer-info{
+// 			float: left;
+// 			width: calc(100% - 144px);
+// 			padding: 0 10px;
+// 			font-style: italic;
+// 			color: #4B4B4B;
+// 			font-size: 15px;
+// 			.customer-name{
+// 				color: #4B4B4B;
+// 				font-size: 18px;
+// 				font-weight: 700;
+// 				margin-bottom: 10px;
+// 			}
+// 		}
+// 	}
+// 	.grateful-detail-box{
+// 		background: #fff;
+// 		padding: 1rem;
+// 		min-height: 85px;
+// 	}
+// 	.grateful-detail{
+// 		font-size: 14px;
+// 		color: #4B4B4B;
+// 		position: relative;
+// 		&:before{
+// 			content: "\f10d";
+// 			font-size: 16px;
+// 			font-family: fontawesome;
+// 		}
+// 	}
+// }

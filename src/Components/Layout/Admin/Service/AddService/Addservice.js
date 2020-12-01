@@ -21,7 +21,8 @@ class Addservice extends Component {
 	// Add post
     dataChange(ev){
 		this.setState({
-		  [ev.target.name]: ev.target.value
+          [ev.target.name]: ev.target.value,
+          selectedFile: ev.target.files[0],
 		})
 	  }
 	

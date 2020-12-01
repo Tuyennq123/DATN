@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Topbar from '../Topbar';
+
 import axios from 'axios';
 import {
   BrowserRouter as Router,
@@ -9,7 +10,8 @@ import {
 } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 // import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
-class Service extends Component {    
+class Service extends Component { 
+
     state = { 
 	  service: [],
 	  name: '',
@@ -21,7 +23,8 @@ class Service extends Component {
 	  updated_at: '',
 	  loading: false,
 	  message: 'hello',
-	  showModal: false,
+    showModal: false,
+    image:'',
     }
     componentDidMount() {
       axios.post('http://localhost:8000/api/service')
@@ -66,7 +69,8 @@ class Service extends Component {
 	
 	  postData = async (ev) =>{
 		ev.preventDefault()
-		const name = this.state.name;
+    const name = this.state.name;
+		const image = this.state.image;
 		const short_desc = this.state.short_desc;
 		const content = this.state.content;
     const updated_at = this.state.updated_at;
@@ -77,13 +81,15 @@ class Service extends Component {
       short_desc,
 		  content,
       created_at,
-      updated_at
+      updated_at,
+      image,
     }
     
 	
 	  }
 	  close = () => {
         this.setState({ showModal: false }); 
+       
       } 
     
     open = () => {
@@ -127,10 +133,18 @@ class Service extends Component {
         .catch(error => console.log(error));
 
 		await this.close(); 
-		// await toastSuccess('Sua thanh cong');
-	  } 
-  
+    // await toastSuccess('Sua thanh cong');
+    
+    } 
+    
+
+
     render(){
+
+    var baseUrl = 'http://localhost:8000/';
+    console.log(baseUrl)
+
+  
       return(
     <div className="admin-page">
 		<div> 
@@ -248,11 +262,14 @@ class Service extends Component {
                                                          <td>{item.short_desc}</td> 
                                                          <td>{item.content}</td> 
                                                          <td>{item.created_at}</td>
-                                                         <td>{item.updated_at}</td>
-                                                         <td> 
+                                                         <td>
+                                                         <img src={`${baseUrl}${item.image}`}/>
+                                                         
+
+                                                           </td>
                                                          	<button className="btn btn-danger" onClick={(e) => this.deleteRow(item.id, e)}>Delete</button>
 															                            <button className="btn btn-warning" onClick={(e) => this.EditRow(item.id)}>Edit</button> 
-                                                         </td> 
+                                                         
                                                          </tr> 
                										                  )} 
                                             </tbody>

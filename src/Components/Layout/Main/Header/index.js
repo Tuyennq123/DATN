@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './header.scss';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
@@ -21,11 +19,7 @@ const Header = (prop) => {
                       <Link to="/users">Users</Link>
                     </li>
                   </ul> */}
-
-
-
                   <header>
-  {/* START HEADER TOP */}
   <div className="header-top">
     <div className="container">
       <div className="header-top-row">
@@ -63,8 +57,6 @@ const Header = (prop) => {
       </div>
     </div>
   </div>
-  {/* END HEADER TOP */}
-  {/* START HEADER-MIDDLE */}
   <div className="header-middle">
     <div className="container">
       <button type="button" id="show-megamenu" data-toggle="collapse" className="navbar-toggle smooth">
@@ -114,8 +106,6 @@ const Header = (prop) => {
       </div>
     </div>
   </div>
-  {/* END HEADER-MIDDLE */}
-  {/* START HEADER-BOTTOM */}
   <div className="header-menu">
     <div className="container">
       <nav className="main-nav">
@@ -125,9 +115,9 @@ const Header = (prop) => {
           <Link to="/">Trang chủ</Link>
             {/* <a href="#" title>Trang chủ</a> */}
           </li>
-          <li>
+          {/* <li>
             <a href="#" title>Trang chủ</a>
-            <ul className="sub-menu">
+              <ul className="sub-menu">
               <li>
                 <a href="#" title>Trang chủ</a>
                 <ul className="sub-menu">
@@ -141,31 +131,17 @@ const Header = (prop) => {
                     <a href="#" title>Trang chủ</a>
                   </li>
                 </ul>
-              </li>
-              <li>
-                <a href="#" title>Trang chủ</a>
-              </li>
-              <li>
-                <a href="#" title>Trang chủ</a>
-                <ul className="sub-menu">
-                  <li>
-                    <a href="#" title>Trang chủ</a>
-                  </li>
-                  <li>
-                    <a href="#" title>Trang chủ</a>
-                  </li>
-                  <li>
-                    <a href="#" title>Trang chủ</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#" title>Trang chủ</a>
               </li>
             </ul>
+          </li> */}
+          <li>
+          <Link to="/tintuc">Tin tức</Link>
           </li>
           <li>
           <Link to="/gioithieu">Giới thiệu</Link>
+          </li>
+          <li>
+          <Link to="/dichvu">Dịch vụ</Link>
           </li>
           <li>
           <Link to="/gioithieu">Liên hê</Link>
@@ -174,7 +150,6 @@ const Header = (prop) => {
       </nav>
     </div>
   </div>
-  {/* END HEADER-BOTTOM */}
 </header>
             </div>
 
