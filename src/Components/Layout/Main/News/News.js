@@ -2,9 +2,25 @@ import React, { Component } from 'react';
 // import Footer from '../../Admin/Footer';
 import Header from '../Header';
 import Footer from '../Footer';
+import axios from 'axios';
 
 
 class News extends Component {
+
+state ={
+  posts: [],
+
+}
+  componentDidMount() {
+    axios.post('http://localhost:8000/api/post')
+    .then(res => {
+    const posts = res.data.data;
+    this.setState({ posts });
+    console.log(posts)
+  })
+      .catch(error => console.log(error));
+}
+
     render() {
         return (
             <div>
@@ -19,10 +35,13 @@ class News extends Component {
                         </nav>
                     </div>
 	            </div>
-                <div className="news-page">
+      <div className="news-page">
         <div className="container">
           <div className="row row10">
             <div className="col-lg-8 col-md-8 col-10">
+
+
+            {this.state.posts.map((item, index) => 
               <div className="news-box">
                 <div className="news-image">
                   <a href="#" className="c-img" title>
@@ -32,11 +51,11 @@ class News extends Component {
                 <div className="news-info">
                   <h3 className="news-title">
                     <a href="#" className="smooth" title>
-                      Nguyên nhân và triệu chứng bệnh loãng xương
+                      {item.title}
                     </a>
                   </h3>
                   <div className="news-desc s-content text5line">
-                    Nguyên nhân của hiện tượng loãng xương Các nguyên nhân chính dẫn đến bệnh loãng xương bao gồm lão hóa dẫn đến sự sụt giảm estrogen ở phụ nữ mãn ...
+                    {item.content}
                   </div>
                   <div className="news-views-time">
                     <div className="news-views">
@@ -53,6 +72,10 @@ class News extends Component {
                   </div>
                 </div>
               </div>
+ )} 
+
+
+
               <div className="news-box">
                 <div className="news-image">
                   <a href="#" className="c-img" title>

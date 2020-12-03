@@ -39,7 +39,8 @@ class Calendars extends Component {
 	
 	postData = async (ev) =>{
 		ev.preventDefault()
-        const name = this.state.name;
+        const name = this.state.names;
+        const date = this.state.date;
         const email = this.state.email;
         const cmt = this.state.cmt;
 		    const phone  = this.state.phone;
@@ -53,6 +54,7 @@ class Calendars extends Component {
         email,
         phone,
         cmt,
+        date,
     }
     
     axios.post('http://localhost:8000/api/customer/store', data)
@@ -85,7 +87,7 @@ class Calendars extends Component {
                                 </div>
                                 <div className="card-body">
                                 <form onSubmit={this.postData.bind(this)}>
-						<div className="form-group ">
+						{/* <div className="form-group ">
               <label>Họ và tên</label>
                 <input
                   className="form-control" 
@@ -94,7 +96,7 @@ class Calendars extends Component {
                   value={this.state.name}
                   onChange={this.dataChange.bind(this)}
                 />
-              </div>
+              </div> */}
             <div className="form-group ">
               <label>Email</label>
 							<input
@@ -115,16 +117,29 @@ class Calendars extends Component {
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
-						<div className="form-group ">
+						{/* <div className="form-group ">
               <label>Date</label>
 							<input
                 className="form-control" 
-								type="date"
+								type="text"
 								name="date"
-								value={this.item.time_start}
+								value={ this.state.timecalender.map(timecalender => <li>{timecalender.time_start}</li>)}
 								onChange={this.dataChange.bind(this)}
 							/>
+						</div> */}
+
+{/* <tr key={index}>
+                </tr>  */}
+
+            	<div className="form-group ">
+              <select value={this.state.dayname} onChange={this.handleChange}>
+              {this.state.timecalender.map((item, index) => 
+            <option>{item.time_start}</option>
+            )} 
+          </select>
+           
 						</div>
+            		
 						<div className="form-group ">
               <label>Chứng minh thư</label>
               <input 
