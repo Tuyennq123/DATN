@@ -4,7 +4,7 @@ import {
     Switch,
     Route,
   } from "react-router-dom";
-  import Contact from '../Layout/Main/Contact'
+  // import Contact from '../Layout/Main/Contact'
   import Serviceinfo from '../Layout/Main/Serviceinfo/Serviceinfo'
   import Home from '../Layout/Main/Home/index'
   import News from '../Layout/Main/News/News'
@@ -21,6 +21,8 @@ import {
   import Customer from '../Layout/Admin/Customer/Customer'
   import AddCustomer from '../Layout/Admin/Customer/AddCustomer/AddCustomer'
   import Calendars from '../Layout/Main/Calendars/Calendars';
+import AboutUs from '../Layout/Main/AboutUs';
+import Contact from '../Layout/Main/Contact/Contact';
 
 
 
@@ -37,7 +39,7 @@ import {
                     <Home />
                   </Route>
                   <Route path="/gioithieu">
-                    <Contact />
+                    <AboutUs />
                   </Route>
                   <Route path="/tintuc">
                     <News />
@@ -47,6 +49,9 @@ import {
                   </Route>
                   <Route path="/datlich">
                     <Calendars />
+                  </Route>
+                  <Route path="/lienhe">
+                    <Contact />
                   </Route>
                 </Switch>
               </Route>

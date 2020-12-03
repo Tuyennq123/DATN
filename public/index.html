@@ -17,6 +17,12 @@
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
     
     <title>React App</title>
   </head>
@@ -24,9 +30,54 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     
-    <script src="js/jquery-2.2.1.min.js" defer></script>
+    <!-- <script src="js/jquery-2.2.1.min.js" defer></script>
 	<script src="js/bootstrap.min.js" defer></script>
 	<script src="js/slick.min.js" defer></script>
-	<script src="js/script.js" defer></script>
+  <script src="js/script.js" defer></script> -->
+
+  <script>
+    $(document).ready(function(){
+  
+      $("input:checkbox").on('click', function() {
+  // in the handler, 'this' refers to the box clicked on
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    // the name of the box is retrieved using the .attr() method
+    // as it is assumed and expected to be immutable
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    // the checked state of the group/box on the other hand will change
+    // and the current value is retrieved using .prop() method
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+});
+  });
+  </script>
+ <script>
+  $(document).ready(function(){
+
+    $(function() {
+$('#colorselector').change(function(){
+  $('.colors').hide();
+  $('#' + $(this).val()).show();
+});
+});
+});
+</script>
+<script>
+  'use strict';
+  
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  
+  today = dd + '/' + mm + '/' + yyyy;
+  document.write(today);
+  
+  
+  </script>
   </body>
 </html>

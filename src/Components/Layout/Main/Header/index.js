@@ -144,7 +144,7 @@ const Header = (prop) => {
           <Link to="/dichvu">Dịch vụ</Link>
           </li>
           <li>
-          <Link to="/gioithieu">Liên hê</Link>
+          <Link to="/lienhe">Liên hê</Link>
           </li>
         </ul>
       </nav>

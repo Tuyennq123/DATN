@@ -148,9 +148,61 @@ const Home = (prop) => {
         <div className="container">
           <h3 className="introduce-title">
             <a href="#" className="smooth" title>
-              <span>Bác sĩ phòng khám</span>
+              <span>Bác sỹ</span>
             </a>
           </h3>
+          <div className="row row10">
+            <div className="col-lg-5 col-md-5 col-sm-5 col10">
+              <div className="doctor-avatar hv-scale">
+                <a href="#" className="smooth c-img" title>
+                  <img src="images/doctors/1.jpg" className alt="" />
+                </a>
+              </div>
+              <div className="doctor-name-box">
+                <a href="#" className="smooth" title>
+                  <p className="doctor-name-bg">
+                    <span>TS.BS</span> Bùi Vinh Quang
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div className="col-lg-7 col-md-7 col-sm-7 col10">
+              <div className="doctor-main-info">
+                <h4 className="doctor-education">
+                  GS. TS.
+                </h4>
+                <h3 className="doctor-name">
+                  Bùi Vinh Quang
+                </h3>
+                <h3 className="doctor-position">
+                  Giám đốc Trung tâm Tim mạch - Lồng ngực, Bệnh viện Hữu nghị Việt Đức.
+                </h3>
+              </div>
+              <div className="doctor-item-detail">
+                <p><b>Chức vụ:</b></p>
+                <p>Giám đốc Trung tâm Tim mạch và lồng ngực, Bệnh viện Hữu nghị Việt Đức.</p>
+                <p>Giảng viên Cao cấp, Trưởng Phân môn Phẫu thuật Tim mạch - lồng ngực, Bộ môn Ngoại - Đại học Y Hà Nội.</p>
+              </div>
+              <div className="doctor-item-detail">
+                <p><b>Chuyên ngành:</b></p>
+                <p>Ngoại tim mạch, lồng ngực.</p>
+              </div>
+              <div className="doctor-item-detail">
+                <p><b>Quá trình đào tạo:</b></p>
+                <p>Năm 1987: Tốt nghiệp trường Đại học Y Hà Nội .</p>
+                <p>Năm 1987: Tốt nghiệp trường Đại học Y Hà Nội .</p>
+                <p>Năm 1987: Tốt nghiệp trường Đại học Y Hà Nội .</p>
+                <p>Năm 1987: Tốt nghiệp trường Đại học Y Hà Nội .</p>
+                <p>Năm 1987: Tốt nghiệp trường Đại học Y Hà Nội .</p>
+                <p>Nhiều khóa đào tạo ngắn hạn dưới 1 năm, trong và ngoài nước về quản lý và Ngoại tim mạch - Lồng ngực</p>
+              </div>
+              <div className="doctor-item-detail">
+                <p><b>Thế mạnh chuyên môn:</b></p>
+                <p>Phẫu thuật Ghép tạng.</p>
+                <p>Phẫu thuật Ghép tạng.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

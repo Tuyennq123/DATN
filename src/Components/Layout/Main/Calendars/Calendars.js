@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import axios from 'axios';
+import './cab.css';
+
 
 class Calendars extends Component {
     state = { 
@@ -17,8 +19,17 @@ class Calendars extends Component {
         loading: false,
         message: 'hello',
         showModal: false,
+        timecalender: [],
     }
-
+    componentDidMount() {
+      axios.post('http://localhost:8000/api/timecalender')
+      .then(res => {
+		  const timecalender = res.data.data;
+		  this.setState({ timecalender });
+		  console.log(timecalender)
+		})
+        .catch(error => console.log(error));
+  }
 	// Add post
     dataChange(ev){
 		this.setState({
@@ -62,10 +73,11 @@ class Calendars extends Component {
 	  }
 
     render() {
+      
         return (
             <div>
                 <Header />
-                <div className="container-fluid">
+                <div className="container">
                         <div>
                             <div className="card shadow mb-4">
                                 <div className="card-header py-3">
@@ -109,7 +121,7 @@ class Calendars extends Component {
                 className="form-control" 
 								type="date"
 								name="date"
-								value={this.state.date}
+								value={this.item.time_start}
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
@@ -123,7 +135,67 @@ class Calendars extends Component {
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
-					
+            <div>
+        <label className="wrapper" htmlFor="states">Ngày khám bệnh</label>
+        <div className="button dropdown"> 
+          <select id="colorselector">
+            <option value="red">12/2/2020</option>
+            <option value="yellow">13/2/2020</option>
+            <option value="blue">14/2/2020</option>
+          </select>
+        </div>
+       
+
+
+
+        <div className="output">
+          <div id="red" className="colors red">
+
+          {/* <div class="foscheck">
+            <input type="checkbox" id="fos18" value="1" name="fooby[1][]" />
+            {this.state.timecalender.map((item, index) => 
+            <label for="fos18">
+                <tr key={index}> 
+                  <td>{item.time_start}</td>
+                </tr> 
+            </label>
+            )} 
+          </div> */}
+
+            {this.state.timecalender.map((item, index) => 
+                <tr key={index}>
+                  <input type="checkbox" id="fos18" value="1" name="fooby[1][]" /> 
+                  <td>{item.time_start}</td>
+                </tr> 
+            )} 
+
+          
+          </div>
+          <div id="yellow" className="colors yellow">
+            <label>
+              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
+            </label>
+            <label>
+              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
+            </label>
+            <label>
+              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
+            </label>
+          </div>
+          <div id="blue"  className="colors blue">
+            <label>
+              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
+            </label>
+            <label>
+              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
+            </label>
+            <label>
+              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
+            </label>
+          </div>
+        </div>
+      </div>
+          
 						<button type="submit" onClick={this.saveItem}>Submit</button>
 					</form>
                             </div>
