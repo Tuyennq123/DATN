@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import '../css/sb-admin-2.min.scss';
 
 const Footer = props =>{
-    var $baseUrl = 'http://localhost:8000/public/';
-
         return (
             <div>
                 <footer className="sticky-footer bg-white">

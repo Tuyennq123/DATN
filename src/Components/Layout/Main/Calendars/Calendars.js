@@ -3,222 +3,163 @@ import Header from '../Header';
 import Footer from '../Footer';
 import axios from 'axios';
 import './cab.css';
+import './index.min.css';
+import { Radio, Button, Message } from 'element-react/next';
 
+const baseUrlApi = 'http://localhost:8000/api/v1';
+
+const initialState = {
+    name: '',
+    email: '',
+    phone: '',
+    clinic_schedule_id:'',
+    time_id:'',
+    date: '',
+    cmt: '',
+    loading: false,
+    schedules: [],
+    arrayTimes: [],
+};
 
 class Calendars extends Component {
-    state = { 
-        customer: [],
-        name: '',
-        email: '',
-        phone: '',
-        created_at: '',
-        updated_at: '',
-        id:'',
-        date: '',
-        cmt: '',
-        loading: false,
-        message: 'hello',
-        showModal: false,
-        timecalender: [],
+    state = Object.assign({}, initialState);
+    onGetClinicSchedules() {
+      axios.get(`${baseUrlApi}/clinic-schedules`, { params: { service_id: 14 } }).then(response => {
+        const { data } = response.data;
+        this.setState({
+            schedules: [...[{ id: 0, name: 'Chọn ngày khám' }], ...data]
+        });
+      }).catch(e => {
+        console.log(e);
+      })
     }
     componentDidMount() {
-      axios.post('http://localhost:8000/api/timecalender')
-      .then(res => {
-		  const timecalender = res.data.data;
-		  this.setState({ timecalender });
-		  console.log(timecalender)
-		})
-        .catch(error => console.log(error));
-  }
-	// Add post
+      this.onGetClinicSchedules();
+    }
     dataChange(ev){
 		this.setState({
 		  [ev.target.name]: ev.target.value
 		})
-	  }
-	
-	postData = async (ev) =>{
-		ev.preventDefault()
-        const name = this.state.names;
-        const date = this.state.date;
-        const email = this.state.email;
-        const cmt = this.state.cmt;
-		    const phone  = this.state.phone;
-        const updated_at = this.state.updated_at;
-		    const created_at = this.state.created_at;
-	
-	const data = {
-        name,
-        created_at,
-        updated_at,
-        email,
-        phone,
-        cmt,
-        date,
     }
-    
-    axios.post('http://localhost:8000/api/customer/store', data)
-    .then(response => {
-      console.log(response);
-      this.setState({
-        loading: false,
-        message: response.data 
-      })
-    })
-    .catch(error => {
-      console.log(error);
-      this.setState({
-        loading: false
-      })
-    })
-	
-	  }
+    setClinicSchedule(event) {
+        const value = event.target.value;
+        const schedule = this.state.schedules.filter(schedule => schedule.id === Number.parseInt(value))[0];
+        this.setState({
+            clinic_schedule_id: value,
+            arrayTimes: [...schedule.times]
+        });
+    }
+    setTime(time_id) {
+        this.setState({ time_id });
+    }
+	postData = async (ev) =>{
+		ev.preventDefault();
+        this.setState({ loading: true });
+	    const data = this.state;
+	    axios.post(`${baseUrlApi}/create-orders`, data).then(response => {
+            this.setState({ loading: false });
+            const result = response.data;
+            if (result.error_code === 0) {
+                this.setState(initialState);
+                Message.success(result.message);
+            } else {
+                Message.error(result.message);
+            }
+        });
+    }
 
     render() {
-      
+
         return (
-            <div>
+            <div className="main">
                 <Header />
                 <div className="container">
-                        <div>
-                            <div className="card shadow mb-4">
-                                <div className="card-header py-3">
-                                    <h6 className="m-0 font-weight-bold text-primary">Danh sách bài viết</h6>
+                    <div className="card shadow mb-4">
+                        <div className="card-header py-3">
+                            <h6 className="m-0 font-weight-bold text-primary">Điền thông tin</h6>
+                        </div>
+                        <div className="card-body">
+                            <form onSubmit={this.postData.bind(this)}>
+                                <div className="post-form">
+                                    <div className="form-group">
+                                        <label>Họ và tên</label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            name="name"
+                                            value={this.state.name}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Số điện thoại</label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            name="phone"
+                                            value={this.state.phone}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Email</label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            name="email"
+                                            value={this.state.email}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Ngày sinh</label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            name="date"
+                                            value={this.state.date}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Số CMND/PASSPORT</label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            name="cmt"
+                                            value={this.state.cmt}
+                                            onChange={this.dataChange.bind(this)}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Ngày khám bệnh</label>
+                                        <select className="form-control"
+                                                name="clinic_schedule_id"
+                                                value={this.state.clinic_schedule_id}
+                                                onChange={this.setClinicSchedule.bind(this)}>
+                                            {this.state.schedules.map((option) => (
+                                                <option value={option.id} key={option.id}>{option.name}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Chọn lịch khám</label>
+                                        <div className="clearfix"></div>
+                                        <Radio.Group value={this.state.time_id} onChange={this.setTime.bind(this)}>
+                                            {this.state.arrayTimes.map((time) => (
+                                                <Radio value={time.id}>{time.name}</Radio>
+                                            ))}
+                                        </Radio.Group>
+                                    </div>
+                                    <div className="text-center">
+                                        <Button type="success" onClick={this.postData.bind(this)} loading={this.state.loading}>Xác nhận</Button>
+                                    </div>
                                 </div>
-                                <div className="card-body">
-                                <form onSubmit={this.postData.bind(this)}>
-						{/* <div className="form-group ">
-              <label>Họ và tên</label>
-                <input
-                  className="form-control" 
-                  type="text"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.dataChange.bind(this)}
-                />
-              </div> */}
-            <div className="form-group ">
-              <label>Email</label>
-							<input
-                className="form-control" 
-								type="text"
-								name="email"
-								value={this.state.email}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-            <div className="form-group ">
-              <label>Số điện thoại</label>
-							<input
-                className="form-control" 
-								type="number"
-								name="phone"
-								value={this.state.phone}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						{/* <div className="form-group ">
-              <label>Date</label>
-							<input
-                className="form-control" 
-								type="text"
-								name="date"
-								value={ this.state.timecalender.map(timecalender => <li>{timecalender.time_start}</li>)}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div> */}
-
-{/* <tr key={index}>
-                </tr>  */}
-
-            	<div className="form-group ">
-              <select value={this.state.dayname} onChange={this.handleChange}>
-              {this.state.timecalender.map((item, index) => 
-            <option>{item.time_start}</option>
-            )} 
-          </select>
-           
-						</div>
-            		
-						<div className="form-group ">
-              <label>Chứng minh thư</label>
-              <input 
-                className="form-control" 
-								type="number"
-								name="cmt"
-								value={this.state.cmt}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-            <div>
-        <label className="wrapper" htmlFor="states">Ngày khám bệnh</label>
-        <div className="button dropdown"> 
-          <select id="colorselector">
-            <option value="red">12/2/2020</option>
-            <option value="yellow">13/2/2020</option>
-            <option value="blue">14/2/2020</option>
-          </select>
-        </div>
-       
-
-
-
-        <div className="output">
-          <div id="red" className="colors red">
-
-          {/* <div class="foscheck">
-            <input type="checkbox" id="fos18" value="1" name="fooby[1][]" />
-            {this.state.timecalender.map((item, index) => 
-            <label for="fos18">
-                <tr key={index}> 
-                  <td>{item.time_start}</td>
-                </tr> 
-            </label>
-            )} 
-          </div> */}
-
-            {this.state.timecalender.map((item, index) => 
-                <tr key={index}>
-                  <input type="checkbox" id="fos18" value="1" name="fooby[1][]" /> 
-                  <td>{item.time_start}</td>
-                </tr> 
-            )} 
-
-          
-          </div>
-          <div id="yellow" className="colors yellow">
-            <label>
-              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
-            </label>
-            <label>
-              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
-            </label>
-            <label>
-              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
-            </label>
-          </div>
-          <div id="blue"  className="colors blue">
-            <label>
-              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
-            </label>
-            <label>
-              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
-            </label>
-            <label>
-              <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Kiwi
-            </label>
-          </div>
-        </div>
-      </div>
-          
-						<button type="submit" onClick={this.saveItem}>Submit</button>
-					</form>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <Footer />
-                
             </div>
         );
     }

@@ -23,13 +23,6 @@ import {
   import Calendars from '../Layout/Main/Calendars/Calendars';
 import AboutUs from '../Layout/Main/AboutUs';
 import Contact from '../Layout/Main/Contact/Contact';
-
-
-
-
-
-
-
   const Routers = ({ })  => {
         return (
         <Router>

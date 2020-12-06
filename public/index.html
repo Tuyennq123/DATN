@@ -15,7 +15,7 @@
 	<link href="css/slick.css" type="text/css" rel="stylesheet" />
 	<!-- <link href="css/reset.css" type="text/css" rel="stylesheet" /> -->
 	<link href="css/style.css" type="text/css" rel="stylesheet" />
-   
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
@@ -23,13 +23,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
-    
+
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
+
     <!-- <script src="js/jquery-2.2.1.min.js" defer></script>
 	<script src="js/bootstrap.min.js" defer></script>
 	<script src="js/slick.min.js" defer></script>
@@ -37,7 +37,7 @@
 
   <script>
     $(document).ready(function(){
-  
+
       $("input:checkbox").on('click', function() {
   // in the handler, 'this' refers to the box clicked on
   var $box = $(this);
@@ -68,16 +68,15 @@ $('#colorselector').change(function(){
 </script>
 <script>
   'use strict';
-  
+
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
-  
+
   today = dd + '/' + mm + '/' + yyyy;
-  document.write(today);
-  
-  
+
+
   </script>
   </body>
 </html>
