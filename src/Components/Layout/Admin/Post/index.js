@@ -197,45 +197,6 @@ class Doctor extends Component {
 								onChange={this.dataChange.bind(this)}
 							/>
 						</div>
-            <div className="form-group ">
-              <label>Trạng thái</label>
-							<input
-                className="form-control" 
-								type="number"
-								name="status"
-								value={this.state.status}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<div className="form-group ">
-              <label>Ngày tạo</label>
-							<input
-                className="form-control" 
-								type="date"
-								name="create_at"
-								value={this.state.create_at}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<div className="form-group ">
-              <label>Ngày cập nhập</label>
-              <input 
-                className="form-control" 
-								type="date"
-								name="update_at"
-								value={this.state.update_at}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
-						<div className="form-group ">
-							<input
-               className="form-control" 
-								type="number"
-								name="is_delete"
-								value={this.state.is_delete}
-								onChange={this.dataChange.bind(this)}
-							/>
-						</div>
 						<button type="submit" onClick={this.saveItem}>Submit</button>
 					</form>
 				</Modal.Body>
