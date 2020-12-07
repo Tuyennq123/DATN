@@ -79,11 +79,11 @@ thead tr:nth-child(3) th {
     color: #000
 }
 
-.active {
+/* .active {
     border-radius: 6px !important;
     background-image: linear-gradient(#90CAF9, #64B5F6) !important;
     color: #000 !important
-}
+} */
 
 .disabled {
     color: #616161 !important

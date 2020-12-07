@@ -21,8 +21,8 @@ import {
   import Customer from '../Layout/Admin/Customer/Customer'
   import AddCustomer from '../Layout/Admin/Customer/AddCustomer/AddCustomer'
   import Calendars from '../Layout/Main/Calendars/Calendars';
-import AboutUs from '../Layout/Main/AboutUs';
-import Contact from '../Layout/Main/Contact/Contact';
+  import AboutUs from '../Layout/Main/AboutUs';
+  import Contact from '../Layout/Main/Contact/Contact';
 
 
 
