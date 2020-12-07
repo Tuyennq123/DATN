@@ -5,6 +5,9 @@ import {
     Link
   } from "react-router-dom";
 
+import imageLogo from './logo/logo.png';
+import imageCall from './logo/call.png';
+
 const Header = (prop) => {
         return (
             <div>
@@ -66,7 +69,7 @@ const Header = (prop) => {
         <div className="col-lg-3 col-md-3 col10">
           <div className="header-logo">
             <a href="#" title className="smooth">
-              <img src="images/logo/logo.png" className="" alt="" />
+              <img src={imageLogo} className="" alt="" />
             </a>
           </div>
         </div>
@@ -99,8 +102,8 @@ const Header = (prop) => {
         </div>
         <div className="col-lg-3 col-md-3 col10">
           <div className="header-hotline">
-            <img src="images/another/call.png" align title />
-            <a href title className="header-phone-number">02466662016</a>
+            <img src={imageCall} align />
+            <a href="/" className="header-phone-number">02466662016</a>
           </div>
         </div>
       </div>
