@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Topbar from '../Topbar';
-
+import swal from 'sweetalert';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
@@ -37,16 +37,31 @@ class Service extends Component {
   }
   
 	deleteRow(id, e){
+    swal({
+			title: "Bạn có chắc chắn muốn xóa ?",
+			// text: "Once deleted, you will not be able to recover this imaginary file!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		  })
+		  .then((willDelete) => {
+			if (willDelete) {
         axios.post(`http://localhost:8000/api/service/destroy/` + id)
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-            const service = this.state.service.filter(item => item.id !== id);
-            console.log(id);
-            this.setState({ service });
-          })
-          // .then(()=> toastWarning('Xoa thanh cong'))
-  
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+          const service = this.state.service.filter(item => item.id !== id);
+          console.log(id);
+          this.setState({ service });
+        })
+			  swal("Xoá thành công !", {
+				icon: "success",
+			  });
+			} else {
+			  swal("Your imaginary file is safe!");
+			}
+       
+        });  
 	  }
 	  
 	  updateRow(id, e){
@@ -57,6 +72,12 @@ class Service extends Component {
             const service = this.state.service.filter(item => item.id !== id);
             console.log(id);
             this.setState({ service });
+            swal({
+              title: "Good job!",
+              text: "You clicked the button!",
+              icon: "success",
+              button: "Aww yiss!",
+            });
           })
       
   }
@@ -133,7 +154,12 @@ class Service extends Component {
         .catch(error => console.log(error));
 
 		await this.close(); 
-    // await toastSuccess('Sua thanh cong');
+    swal({
+      title: "Cập nhập thành công",
+      text: "You clicked the button!",
+      icon: "success",
+      button: "Xác nhận !",
+    });
     
     } 
     

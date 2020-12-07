@@ -3,9 +3,9 @@ import Navbar from '../../Navbar';
 import Footer from '../../Footer';
 import Topbar from '../../Topbar';
 import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
-// import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
-class Addservice extends Component {    
+import swal from 'sweetalert';
+
+class Editservice extends Component {    
     state = { 
 	    service: [],
 	    name: '',
@@ -18,48 +18,95 @@ class Addservice extends Component {
         price: '',
     }
 
+    updateRow(id, e){
+        axios.post(`http://localhost:8000/api/service/update/` + id)
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+            const service = this.state.service.filter(item => item.id !== id);
+            console.log(id);
+            this.setState({ service });
+            swal({
+              title: "Good job!",
+              text: "You clicked the button!",
+              icon: "success",
+              button: "Aww yiss!",
+            });
+          })
+      
+  }
+  dataChange(ev){
+    this.setState({
+      [ev.target.name]: ev.target.value
+    })
+  }
+
+  postData = async (ev) =>{
+    ev.preventDefault()
+const name = this.state.name;
+    const image = this.state.image;
+    const short_desc = this.state.short_desc;
+    const content = this.state.content;
+const updated_at = this.state.updated_at;
+    const created_at = this.state.created_at;
+
+    const data = {
+  name,
+  short_desc,
+      content,
+  created_at,
+  updated_at,
+  image,
+}
+
+
+  }
+
 	// Add post
-    dataChange(ev){
+    EditRow = (id) =>{
+		const postUpdated = [...this.state.service];
+		const item = postUpdated.find(item=>item.id===id);
 		this.setState({
-          [ev.target.name]: ev.target.value,
+			service: [...postUpdated],
+			name: item.name,
+			short_desc: item.short_desc,
+			content: item.content,
+			is_delete: item.is_delete,
+		    created_at: item.created_at, 
+			updated_at: item.updated_at,
+			id:item.id,
+			loading: false,
+			showModal: false, 
+		 }) 
+		 this.open()  
+	  }  
+    // Save post
+	  saveItem = async () =>{
+	let service = [...this.state.service];
+	this.state.service.map((item,index)=>{
+		if (item.id===this.state.id) {
+			service[index] = [this.state]
+		}
+	})
+	this.setState({service})
+	await axios.post(`http://localhost:8000/api/service/update/` + this.state.id, {...this.state});
+	await axios.post('http://localhost:8000/api/service') 
+        .then(res => {
+		  const service = res.data.data;
+		  this.setState({ service });
+		  console.log(service)
 		})
-	  }
-	
-	postData = async (ev) =>{
-		ev.preventDefault()
-        const name = this.state.name;
-		const price = this.state.price;
-		const short_desc = this.state.short_desc;
-		const content = this.state.content;
-        const updated_at = this.state.updated_at;
-		const created_at = this.state.created_at;
-	
-	const data = {
-        name,
-        short_desc,
-        content,
-        created_at,
-        updated_at,
-        price,
+        .catch(error => console.log(error));
 
-    }
+		await this.close(); 
+    swal({
+      title: "Cập nhập thành công",
+      text: "You clicked the button!",
+      icon: "success",
+      button: "Xác nhận !",
+    });
     
-    axios.post('http://localhost:8000/api/service/store', data)
-    .then(response => {
-      console.log(response);
-      this.setState({
-        loading: false,
-        message: response.data 
-      })
-    })
-    .catch(error => {
-      console.log(error);
-      this.setState({
-        loading: false
-      })
-    })
-	  }
-
+    } 
     render(){
       return(
     <div className="admin-page">
@@ -161,4 +208,4 @@ class Addservice extends Component {
   }
   
 
-export default Addservice;
+export default Editservice;

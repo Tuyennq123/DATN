@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-  } from "react-router-dom";
+    Route  } from "react-router-dom";
   // import Contact from '../Layout/Main/Contact'
   import Serviceinfo from '../Layout/Main/Serviceinfo/Serviceinfo'
   import Home from '../Layout/Main/Home/index'
@@ -15,6 +14,7 @@ import {
   import EditPost from '../Layout/Admin/Post/EditPost/EditPost'
   import Service from '../Layout/Admin/Service'
   import AddService from '../Layout/Admin/Service/AddService/Addservice'
+  import Editservice from '../Layout/Admin/Service/EditService/Editservice'
   import TimeClass from '../Layout/Admin/TimeClass/TimeClass'
   import Addtime from '../Layout/Admin/TimeClass/Addtime/Addtime'
   import Users from '../Layout/Admin/Users/Users'
@@ -30,7 +30,7 @@ import Contact from '../Layout/Main/Contact/Contact';
 
 
 
-  const Routers = ({ props })  => {
+  const Routers = ({ })  => {
         return (
         <Router>
               <Route>
@@ -76,6 +76,9 @@ import Contact from '../Layout/Main/Contact/Contact';
                 </Route>
                 <Route path="/admin/service/addservice" exact>
                   <AddService />
+                </Route>
+                <Route path="/admin/service/editservice" exact>
+                  <Editservice />
                 </Route>
                 <Route path="/admin/timeclass" exact>
                   <TimeClass />

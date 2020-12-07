@@ -3,12 +3,15 @@ import Navbar from '../../Navbar';
 import Footer from '../../Footer';
 import Topbar from '../../Topbar';
 import axios from 'axios';
+
 import { Modal, Button } from 'react-bootstrap';
 // import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
 class Addpost extends Component {    
     state = { 
-	  posts: [],
-	  title: '',
+    posts: [],
+    feature_image:'',
+    title: '',
+    file: '',
 	  slug: '',
 	  content: '',
 	  status: '',
@@ -18,19 +21,29 @@ class Addpost extends Component {
 	  updated_at: '',
 	  loading: false,
 	  message: 'hello',
-	  showModal: false,
+    showModal: false,
     }
 
 	// Add post
     dataChange(ev){
 		this.setState({
-		  [ev.target.name]: ev.target.value
+      [ev.target.name]: ev.target.value,
+      // file:ev.target.files[0]
 		})
 	  }
 	
 	postData = async (ev) =>{
-		ev.preventDefault()
-		const title = this.state.title;
+
+
+    ev.preventDefault()
+    const formData = new FormData();
+      formData.append('myImage',this.state.file);
+      const config = {
+          headers: {
+              'content-type': 'multipart/form-data'
+          }
+      };
+    const title = this.state.title;
 		const slug = this.state.slug;
 		const content = this.state.content;
     const status = this.state.status;
@@ -43,11 +56,10 @@ class Addpost extends Component {
 		  content,
       status,
       created_at,
-      updated_at
-
+      updated_at,
     }
     
-    axios.post('http://localhost:8000/api/post/store', data)
+    axios.post('http://localhost:8000/api/post/store', data,formData,config)
     .then(response => {
       console.log(response);
       this.setState({
@@ -111,7 +123,7 @@ class Addpost extends Component {
                                             />
                                     </div>
                                     <div className="form-group ">
-                                    <label>Trạng thái</label>
+                                        <label>Trạng thái</label>
                                                 <input
                                                 className="form-control" 
                                                 type="number"
@@ -120,35 +132,17 @@ class Addpost extends Component {
                                                 onChange={this.dataChange.bind(this)}
                                                 />
                                     </div>
-                                            <div className="form-group ">
-                                    <label>Ngày tạo</label>
-                                                <input
-                                    className="form-control" 
-                                                    type="date"
-                                                    name="create_at"
-                                                    value={this.state.create_at}
-                                                    onChange={this.dataChange.bind(this)}
+                                            
+                                    <div className="form-group ">
+                                            <label>Anh</label>
+                                                <input 
+                                                  className="form-control" 
+                                                  type="file"
+                                                  name="feature_image"
+                                                  value={this.state.feature_image}
+                                                  onChange={this.dataChange.bind(this)}
                                                 />
-                                            </div>
-                                            <div className="form-group ">
-                                    <label>Ngày cập nhập</label>
-                                    <input 
-                                                    className="form-control" 
-                                                    type="date"
-                                                    name="update_at"
-                                                    value={this.state.update_at}
-                                                    onChange={this.dataChange.bind(this)}
-                                                />
-                                            </div>
-                                            <div className="form-group ">
-                                              <input
-                                              className="form-control" 
-                                              type="number"
-                                              name="is_delete"
-                                              value={this.state.is_delete}
-                                              onChange={this.dataChange.bind(this)}
-                                                />
-                                           </div>
+                                    </div>
                                             <button type="submit" onClick={this.saveItem}>Submit</button>
                                             </form>
                             </div>

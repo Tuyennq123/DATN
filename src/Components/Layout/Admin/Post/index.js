@@ -3,12 +3,13 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Topbar from '../Topbar';
 import axios from 'axios';
+import swal from 'sweetalert';
 import { Modal, Button } from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
-// import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
+import { toastSuccess, toastWarning } from '../../../../Helper/toastHelper';
 import './posts.scss';
 class Doctor extends Component {    
     state = { 
@@ -34,22 +35,36 @@ class Doctor extends Component {
 		})
         .catch(error => console.log(error));
   }
-  
-
-  
- 
+	
 	deleteRow(id, e){
-        axios.post(`http://localhost:8000/api/post/destroy/` + id)
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-            const posts = this.state.posts.filter(item => item.id !== id);
-            console.log(id);
-            this.setState({ posts });
-          })
-          // .then(()=> toastWarning('Xoa thanh cong'))
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover this imaginary file!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		  })
+		  .then((willDelete) => {
+			if (willDelete) {
+			  swal("Poof! Your imaginary file has been deleted!", {
+				icon: "success",
+			  });
+			} else {
+			  swal("Your imaginary file is safe!");
+			}
+		axios.post(`http://localhost:8000/api/post/destroy/` + id)
+		.then(res => {
+		  console.log(res);
+		  console.log(res.data);
+		  const posts = this.state.posts.filter(item => item.id !== id);
+		  console.log(id);
+		  this.setState({ posts });
+		})
+	});
   
 	  }
+
+
 	  
 	  updateRow(id, e){
         axios.post(`http://localhost:8000/api/post/update/` + id)
@@ -74,34 +89,20 @@ class Doctor extends Component {
 		const title = this.state.title;
 		const slug = this.state.slug;
 		const content = this.state.content;
-    const status = this.state.status;
-    const updated_at = this.state.updated_at;
+    	const status = this.state.status;
+    	const updated_at = this.state.updated_at;
 		const created_at = this.state.created_at;
 	
 		const data = {
-		  title,
-		  slug,
-		  content,
-      status,
-      created_at,
-      updated_at
+			title,
+			slug,
+			content,
+			status,
+			created_at,
+			updated_at
 
     }
     
-    // axios.post('http://localhost:8000/api/post/store', data)
-    // .then(response => {
-    //   console.log(response);
-    //   this.setState({
-    //     loading: false,
-    //     message: response.data 
-    //   })
-    // })
-    // .catch(error => {
-    //   console.log(error);
-    //   this.setState({
-    //     loading: false
-    //   })
-    // })
     
 	
 	  }
@@ -152,7 +153,7 @@ class Doctor extends Component {
         .catch(error => console.log(error));
 
 		await this.close(); 
-		// await toastSuccess('Sua thanh cong');
+		await toastSuccess('Sua thanh cong');
 	  } 
   
     render(){
