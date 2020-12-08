@@ -13,6 +13,7 @@ import {
   import AddPost from '../Layout/Admin/Post/AddPost/Addpost'
   import EditPost from '../Layout/Admin/Post/EditPost/EditPost'
   import Service from '../Layout/Admin/Service'
+  import Order from '../Layout/Admin/Order'
   import AddService from '../Layout/Admin/Service/AddService/Addservice'
   import Editservice from '../Layout/Admin/Service/EditService/Editservice'
   import TimeClass from '../Layout/Admin/TimeClass/TimeClass'
@@ -66,6 +67,9 @@ import Contact from '../Layout/Main/Contact/Contact';
                 </Route>
                 <Route path="/admin/service" exact>
                   <Service />
+                </Route>
+                <Route path="/admin/orders" exact>
+                  <Order />
                 </Route>
                 <Route path="/admin/service/addservice" exact>
                   <AddService />
