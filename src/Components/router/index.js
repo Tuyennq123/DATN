@@ -41,9 +41,7 @@ import Contact from '../Layout/Main/Contact/Contact';
                   <Route path="/dichvu">
                     <Serviceinfo />
                   </Route>
-                  <Route path="/datlich">
-                    <Calendars />
-                  </Route>
+                  <Route path="/datlich/:id" component={Calendars} />
                   <Route path="/lienhe">
                     <Contact />
                   </Route>

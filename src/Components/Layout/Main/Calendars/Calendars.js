@@ -24,7 +24,8 @@ const initialState = {
 class Calendars extends Component {
     state = Object.assign({}, initialState);
     onGetClinicSchedules() {
-      axios.get(`${baseUrlApi}/clinic-schedules`, { params: { service_id: 14 } }).then(response => {
+      const serviceID = this.props.match.params.id;
+      axios.get(`${baseUrlApi}/clinic-schedules`, { params: { service_id: serviceID } }).then(response => {
         const { data } = response.data;
         this.setState({
             schedules: [...[{ id: 0, name: 'Chọn ngày khám' }], ...data]

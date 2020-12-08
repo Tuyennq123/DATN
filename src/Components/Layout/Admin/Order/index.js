@@ -61,7 +61,7 @@ class Order extends Component {
                                                         <td>{item.time.name}</td>
                                                         <td>{item.created_at}</td>
                                                         <td>
-                                                            
+
                                                         </td>
                                                     </tr>
                                                 )}

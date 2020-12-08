@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import Footer from '../../Admin/Footer';
+import { Link } from "react-router-dom";
+import Calendars from '../../Main/Calendars/Calendars';
 import Header from '../Header';
 import Footer from '../Footer';
 import axios from 'axios';
@@ -35,7 +37,7 @@ state = {
                         </nav>
                     </div>
 	            </div>
-             
+
                 <div className="service-page">
         <div className="container">
           <div className="service-page-desc">
@@ -46,20 +48,24 @@ state = {
             </div>
           </div>
           <div className="row row10">
-          {this.state.service.map((item, index) => 
+          {this.state.service.map((item, index) =>
             <div className="col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xxs-12 col10">
               <div className="service-item">
                 <div className="service-image">
-                  <a href="#" className="smooth hv-border-inline-bg" title>
-                    <img src="images/services/1.png" alt="" />
-                  </a>
+                    <Link to={`/datlich/${item.id}`}>
+                      <a href="#" className="smooth hv-border-inline-bg" title>
+                        <img src="images/services/1.png" alt="" />
+                      </a>
+                    </Link>
                 </div>
                 <h3 className="service-title">
-                  <a href="#" className="smooth" title>{item.content}</a>
+                    <Link to={`/datlich/${item.id}`}>
+                        <a href="#" className="smooth" title>{item.content}</a>
+                    </Link>
                 </h3>
               </div>
             </div>
-)} 
+)}
           </div>
           <div className="te-pagination">
             <a className="smooth" href="#"><i className="fa fa-angle-double-left" /></a>
