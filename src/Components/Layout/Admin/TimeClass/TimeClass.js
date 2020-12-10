@@ -24,7 +24,7 @@ class TimeClass extends Component {
 	  showModal: false,
     }
     componentDidMount() {
-      axios.post('http://localhost:8000/api/timecalender')
+      axios.get('http://localhost:8000/api/timecalender')
       .then(res => {
 		  const timecalender = res.data.data;
 		  this.setState({ timecalender });

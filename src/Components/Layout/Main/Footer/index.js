@@ -10,7 +10,7 @@ class index extends Component {
     <div className="row row10">
       <div className="col-lg-4 col-md-4 col-sm-12 col10">
         <h2 className="footer-info-title">
-          Phòng khám Đa khoa Việt Medical
+          Phòng khám Phụ Sản 55 Yên Lãng
         </h2>
         <ul className="footer-info-list">
           <li className="footer-info-item">
@@ -23,13 +23,13 @@ class index extends Component {
             Thứ 7 - Chủ nhật: 8h00 - 21h00
           </li>
           <li className="footer-info-item">
-            <strong>Địa chỉ: </strong>số 9 Duy Tân - Hà Nội 
+            <strong>Địa chỉ: </strong>55 Yên Lãng - Hà Nội 
           </li>
           <li className="footer-info-item">
-            <strong>Email: </strong><a href="#" className="smooth" title>hotro@keyweb.vn</a>
+            <strong>Email: </strong>phusan55yenlang@gmaiol.com.vn
           </li>
           <li className="footer-info-item">
-            <strong>Điện thoại: </strong><a href="#" className="smooth" title>012345678</a>
+            <strong>Điện thoại: </strong>012345678
           </li>
         </ul>
       </div>
@@ -37,63 +37,36 @@ class index extends Component {
         <div className="row row10">
           <div className="col-lg-4 col-md-4 col-sm-4 col10">
             <h5 className="footer-info-title">
-              Hỗ trợ
+              Chăm sóc khách hàng
             </h5>
             <ul className="footer-info-list">
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
+               Giới thiệu
               </li>
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
+                Quy định chung
               </li>
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Trang chủ</a>
+                Chính sách bảo mật
               </li>
             </ul>
           </div>
           <div className="col-lg-4 col-md-4 col-sm-4 col10">
             <h5 className="footer-info-title">
-              Hỗ trợ
+              Dịch vụ
             </h5>
             <ul className="footer-info-list">
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
+                <p>Siêu âm thai 2D</p>
               </li>
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
+              <p>Siêu âm thai 3D</p>
               </li>
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
+              <p>Siêu âm thai màu</p>
               </li>
               <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
-              </li>
-              <li className="footer-info-item">
-                <a href="#" className="smooth" title>Khám tầm soát tim mạch</a>
+              <p>Siêu âm thai đặc biệt</p>
               </li>
             </ul>
           </div>
@@ -107,7 +80,7 @@ class index extends Component {
               </a>
               <a href="#" className="smooth" title>
                 <i className="fa fa-google" aria-hidden="true" />
-              </a>
+</a>
               <a href="#" className="smooth" title>
                 <i className="fa fa-instagram" aria-hidden="true" />
               </a>

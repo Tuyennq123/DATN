@@ -1,0 +1,9 @@
+.service-page .service-item .service-title a 
+{
+    color: #666 !important;
+    &:hover
+    {
+        color: red !important;
+        text-decoration: none;
+    }
+}

@@ -5,6 +5,7 @@ import Calendars from '../../Main/Calendars/Calendars';
 import Header from '../Header';
 import Footer from '../Footer';
 import axios from 'axios';
+import './sv.scss';
 
 
 
@@ -24,6 +25,8 @@ state = {
 }
 
     render() {
+    var baseUrl = 'http://localhost:8000/';
+
         return (
             <div>
                 <Header />
@@ -32,19 +35,17 @@ state = {
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Tin tức</li>
+                                <li class="breadcrumb-item active" aria-current="page">Đặt lịch</li>
                             </ol>
                         </nav>
                     </div>
 	            </div>
-
                 <div className="service-page">
         <div className="container">
           <div className="service-page-desc">
-            <h1 className="service-page-title">Dịch vụ</h1>
+            <h1 className="service-page-title">Đăng ký dịch vụ khám</h1>
             <div className="s-content">
-              <p>Khách hàng có nhu cầu, chúng tôi có dịch vụ.</p>
-              <p>Dịch vụ chúng tôi luôn cung cấp các dịch vụ theo từng nhu cầu khách hàng. Ngày càng nhiều dịch vụ được đưa ra, nhằm một mục đích duy nhất đó là đem lại sự hài lòng cho khách hàng - những người đã và đang cần khám chữa bệnh trong thời gian nhanh nhất.</p>
+              <h3>Quý khách vui lòng chọn dịch vụ đăng ký khám</h3>
             </div>
           </div>
           <div className="row row10">
@@ -54,7 +55,7 @@ state = {
                 <div className="service-image">
                     <Link to={`/datlich/${item.id}`}>
                       <a href="#" className="smooth hv-border-inline-bg" title>
-                        <img src="images/services/1.png" alt="" />
+                  <img src={`${baseUrl}${item.image}`}/>
                       </a>
                     </Link>
                 </div>
@@ -67,7 +68,7 @@ state = {
             </div>
 )}
           </div>
-          <div className="te-pagination">
+          {/* <div className="te-pagination">
             <a className="smooth" href="#"><i className="fa fa-angle-double-left" /></a>
             <a className="smooth" href="#"><i className="fa fa-angle-left" /></a>
             <a className="smooth" href="#">1</a>
@@ -75,7 +76,7 @@ state = {
             <a className="smooth" href="#">3</a>
             <a className="smooth" href="#"><i className="fa fa-angle-right" /></a>
             <a className="smooth" href="#"><i className="fa fa-angle-double-right" /></a>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

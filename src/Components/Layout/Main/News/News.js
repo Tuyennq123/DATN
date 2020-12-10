@@ -22,6 +22,8 @@ state ={
 }
 
     render() {
+    var baseUrl = 'http://localhost:8000/';
+
         return (
             <div>
                 <Header />
@@ -45,7 +47,7 @@ state ={
               <div className="news-box">
                 <div className="news-image">
                   <a href="#" className="c-img" title>
-                    <img src="images/services/1.jpg" alt="" />
+                  <img src={`${baseUrl}${item.feature_image}`}/>
                   </a>
                 </div>
                 <div className="news-info">
@@ -57,145 +59,11 @@ state ={
                   <div className="news-desc s-content text5line">
                     {item.content}
                   </div>
-                  <div className="news-views-time">
-                    <div className="news-views">
-                      <i className="fa fa-eye" aria-hidden="true" />
-                      <span>6</span>
-                    </div>
-                    <div className="news-time">
-                      <i className="fa fa-clock-o" aria-hidden="true" />
-                      <span>6 tháng trước</span>
-                    </div>
-                  </div>
-                  <div className="view-more">
-                    <a href="#" className="smooth" title><span>Xem thêm</span></a>
-                  </div>
                 </div>
               </div>
  )} 
 
 
-
-              <div className="news-box">
-                <div className="news-image">
-                  <a href="#" className="c-img" title>
-                    <img src="images/services/1.jpg" alt="" />
-                  </a>
-                </div>
-                <div className="news-info">
-                  <h3 className="news-title">
-                    <a href="#" className="smooth" title>
-                      Nguyên nhân và triệu chứng bệnh loãng xương
-                    </a>
-                  </h3>
-                  <div className="news-desc s-content text5line">
-                    Nguyên nhân của hiện tượng loãng xương Các nguyên nhân chính dẫn đến bệnh loãng xương bao gồm lão hóa dẫn đến sự sụt giảm estrogen ở phụ nữ mãn ...
-                  </div>
-                  <div className="news-views-time">
-                    <div className="news-views">
-                      <i className="fa fa-eye" aria-hidden="true" />
-                      <span>6</span>
-                    </div>
-                    <div className="news-time">
-                      <i className="fa fa-clock-o" aria-hidden="true" />
-                      <span>6 tháng trước</span>
-                    </div>
-                  </div>
-                  <div className="view-more">
-                    <a href="#" className="smooth" title><span>Xem thêm</span></a>
-                  </div>
-                </div>
-              </div>
-              <div className="news-box">
-                <div className="news-image">
-                  <a href="#" className="c-img" title>
-                    <img src="images/services/1.jpg" alt="" />
-                  </a>
-                </div>
-                <div className="news-info">
-                  <h3 className="news-title">
-                    <a href="#" className="smooth" title>
-                      Nguyên nhân và triệu chứng bệnh loãng xương
-                    </a>
-                  </h3>
-                  <div className="news-desc s-content text5line">
-                    Nguyên nhân của hiện tượng loãng xương Các nguyên nhân chính dẫn đến bệnh loãng xương bao gồm lão hóa dẫn đến sự sụt giảm estrogen ở phụ nữ mãn ...
-                  </div>
-                  <div className="news-views-time">
-                    <div className="news-views">
-                      <i className="fa fa-eye" aria-hidden="true" />
-                      <span>6</span>
-                    </div>
-                    <div className="news-time">
-                      <i className="fa fa-clock-o" aria-hidden="true" />
-                      <span>6 tháng trước</span>
-                    </div>
-                  </div>
-                  <div className="view-more">
-                    <a href="#" className="smooth" title><span>Xem thêm</span></a>
-                  </div>
-                </div>
-              </div>
-              <div className="news-box">
-                <div className="news-image">
-                  <a href="#" className="c-img" title>
-                    <img src="images/services/1.jpg" alt="" />
-                  </a>
-                </div>
-                <div className="news-info">
-                  <h3 className="news-title">
-                    <a href="#" className="smooth" title>
-                      Nguyên nhân và triệu chứng bệnh loãng xương
-                    </a>
-                  </h3>
-                  <div className="news-desc s-content text5line">
-                    Nguyên nhân của hiện tượng loãng xương Các nguyên nhân chính dẫn đến bệnh loãng xương bao gồm lão hóa dẫn đến sự sụt giảm estrogen ở phụ nữ mãn ...
-                  </div>
-                  <div className="news-views-time">
-                    <div className="news-views">
-                      <i className="fa fa-eye" aria-hidden="true" />
-                      <span>6</span>
-                    </div>
-                    <div className="news-time">
-                      <i className="fa fa-clock-o" aria-hidden="true" />
-                      <span>6 tháng trước</span>
-                    </div>
-                  </div>
-                  <div className="view-more">
-                    <a href="#" className="smooth" title><span>Xem thêm</span></a>
-                  </div>
-                </div>
-              </div>
-              <div className="news-box">
-                <div className="news-image">
-                  <a href="#" className="c-img" title>
-                    <img src="images/services/1.jpg" alt="" />
-                  </a>
-                </div>
-                <div className="news-info">
-                  <h3 className="news-title">
-                    <a href="#" className="smooth" title>
-                      Nguyên nhân và triệu chứng bệnh loãng xương
-                    </a>
-                  </h3>
-                  <div className="news-desc s-content text5line">
-                    Nguyên nhân của hiện tượng loãng xương Các nguyên nhân chính dẫn đến bệnh loãng xương bao gồm lão hóa dẫn đến sự sụt giảm estrogen ở phụ nữ mãn ...
-                  </div>
-                  <div className="news-views-time">
-                    <div className="news-views">
-                      <i className="fa fa-eye" aria-hidden="true" />
-                      <span>6</span>
-                    </div>
-                    <div className="news-time">
-                      <i className="fa fa-clock-o" aria-hidden="true" />
-                      <span>6 tháng trước</span>
-                    </div>
-                  </div>
-                  <div className="view-more">
-                    <a href="#" className="smooth" title><span>Xem thêm</span></a>
-                  </div>
-                </div>
-              </div>
               <div className="te-pagination">
                 <a className="smooth" href="#"><i className="fa fa-angle-double-left" /></a>
                 <a className="smooth" href="#"><i className="fa fa-angle-left" /></a>

@@ -7,7 +7,7 @@ import {
   import Serviceinfo from '../Layout/Main/Serviceinfo/Serviceinfo'
   import Home from '../Layout/Main/Home/index'
   import News from '../Layout/Main/News/News'
-  import Dashboard from '../Layout/Admin/Dashboard/index'
+  // import Dashboard from '../Layout/Admin/Dashboard/index'
   import Doctor from '../Layout/Admin/Doctor'
   import Post from '../Layout/Admin/Post'
   import AddPost from '../Layout/Admin/Post/AddPost/Addpost'
@@ -24,6 +24,8 @@ import {
   import Calendars from '../Layout/Main/Calendars/Calendars';
 import AboutUs from '../Layout/Main/AboutUs';
 import Contact from '../Layout/Main/Contact/Contact';
+
+import OderDoctor from '../Layout/Admin/OderDoctor/OderDoctor';
   const Routers = ({ })  => {
         return (
         <Router>
@@ -48,9 +50,9 @@ import Contact from '../Layout/Main/Contact/Contact';
                 </Switch>
               </Route>
               <Switch>
-                <Route path="/admin" exact>
+                {/* <Route path="/admin" exact>
                   <Dashboard />
-                </Route>
+                </Route> */}
                 <Route path="/admin/doctor">
                   <Doctor />
                 </Route>
@@ -89,6 +91,9 @@ import Contact from '../Layout/Main/Contact/Contact';
                 </Route>
                 <Route path="/admin/customer/addcustomer">
                   <AddCustomer />
+                </Route>
+                <Route path="/admin/OderDoctor">
+                  <OderDoctor />
                 </Route>
               </Switch>
       </Router>

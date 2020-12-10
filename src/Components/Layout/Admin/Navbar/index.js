@@ -5,6 +5,7 @@ import {
   } from "react-router-dom";
 import '../css/sb-admin-2.min.scss';
 import '../Doctor';
+import './style.scss'
 const Navbar = props => {
         return (
             <div className="menu">
@@ -14,51 +15,63 @@ const Navbar = props => {
     <div className="sidebar-brand-icon rotate-n-15">
       <i className="fas fa-laugh-wink" />
     </div>
-    <div className="sidebar-brand-text mx-3">Quản trịsssssss <sup></sup></div>
+    <div className="sidebar-brand-text mx-3">Quản trị <sup></sup></div>
   </a>
   {/* Divider */}
 
   <hr className="sidebar-divider my-0" />
-              <li className="nav-item">
+              {/* <li className="nav-item">
                   <Link className="nav-link" to="/admin">
                       <i className="fas fa-fw fa-tachometer-alt" />
                       <span>Dashboard</span>
                   </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                   <Link className="nav-link" to="/admin/post">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Post</span>
+                      <span>Bài viết</span>
                   </Link>
               </li>
               <li className="nav-item">
                   <Link className="nav-link" to="/admin/service">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Service</span>
+                      <span>Dịch vụ</span>
                   </Link>
               </li>
               <li className="nav-item">
                   <Link className="nav-link" to="/admin/timeclass">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>TimeClass</span>
+                      <span>Khung giờ</span>
                   </Link>
               </li>
               <li className="nav-item">
                   <Link className="nav-link" to="/admin/users">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Users</span>
+                      <span>Tài khoản</span>
                   </Link>
               </li>
               <li className="nav-item">
                   <Link className="nav-link" to="/admin/customer">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Customer</span>
+                      <span>Khách hàng</span>
                   </Link>
               </li>
               <li className="nav-item">
                   <Link className="nav-link" to="/admin/doctor">
                       <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Doctor</span>
+                      <span>Bác sĩ</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/orders">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Danh sách đặt lịch</span>
+                  </Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/admin/OderDoctor">
+                      <i className="fas fa-fw fa-tachometer-alt" />
+                      <span>Lịch khám</span>
                   </Link>
               </li>
   {/* Divider */}
@@ -67,29 +80,11 @@ const Navbar = props => {
   
    
   {/* Nav Item - Utilities Collapse Menu */}
-  <li className="nav-item">
-    <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-      <i className="fas fa-fw fa-wrench" />
-      <span>Utilities</span>
-    </a>
-    <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-      <div className="bg-white py-2 collapse-inner rounded">
-        <h6 className="collapse-header">Custom Utilities:</h6>
-        <a className="collapse-item" href="utilities-color.html">Colors</a>
-        <a className="collapse-item" href="utilities-border.html">Borders</a>
-        <a className="collapse-item" href="utilities-animation.html">Animations</a>
-        <a className="collapse-item" href="utilities-other.html">Other</a>
-      </div>
-    </div>
-  </li>
+
   {/* Divider */}
-  <hr className="sidebar-divider" />
-  {/* Heading */}
-  <div className="sidebar-heading">
-    Addons
-  </div>
+
   {/* Nav Item - Pages Collapse Menu */}
-  <li className="nav-item">
+  {/* <li className="nav-item">
     <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
       <i className="fas fa-fw fa-folder" />
       <span>Pages</span>
@@ -106,26 +101,16 @@ const Navbar = props => {
         <a className="collapse-item" href="blank.html">Blank Page</a>
       </div>
     </div>
-  </li>
+  </li> */}
   {/* Nav Item - Charts */}
-  <li className="nav-item">
+  {/* <li className="nav-item">
     <a className="nav-link" href="charts.html">
       <i className="fas fa-fw fa-chart-area" />
       <span>Charts</span></a>
-  </li>
-  <hr className="sidebar-divider my-0" />
-              <li className="nav-item">
-                  <Link className="nav-link" to="/bacsi">
-                      <i className="fas fa-fw fa-tachometer-alt" />
-                      <span>Bảng điều khiển</span></Link>
-              </li>
+  </li> */}
   
-  {/* Divider */}
-  <hr className="sidebar-divider d-none d-md-block" />
   {/* Sidebar Toggler (Sidebar) */}
-  <div className="text-center d-none d-md-inline">
-    <button className="rounded-circle border-0" id="sidebarToggle" />
-  </div>
+  
 </ul>
             </div>
         );

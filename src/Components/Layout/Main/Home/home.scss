@@ -1,3 +1,45 @@
+.home-introduce .introduce-desc
+{
+    text-align: justify !important;
+}
+.it
+{
+    background: #f8f5e6 !important;
+}
+.tct h3
+{
+    text-align: center !important;
+    padding: 20px;
+}
+.home-service .service-list .service-name a
+{
+    color: #666 !important;
+    &:hover{
+        color: red !important;
+        text-decoration: none !important;
+    }
+}
+.home-news .small-news .small-news-info .small-news-title a
+{
+    color: #666 !important;
+    &:hover{
+        color: red !important;
+        text-decoration: none !important;
+    }
+}
+.home-news .hot-news-detail .hot-news-title a
+{
+    color: #666 !important;
+    &:hover{
+        color: red !important;
+        text-decoration: none !important;
+    }
+}
+
+.home-service .service-list
+{
+    justify-content: center !important;
+}
 // .home-introduce{
 // 	padding: 3rem 0;
 // 	background: #f9f9f9;
